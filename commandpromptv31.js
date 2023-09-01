@@ -7,9 +7,7 @@ function displayWelcomeMessage() {
     const messageLines = welcomeMessage.split('\n');
     
     messageLines.forEach(line => {
-        const messageDiv = document.createElement('div');
-        messageDiv.textContent = line;
-        appendOutput(messageDiv);
+        appendOutput(line); // No need to create a new div for each line
     });
 }
 
@@ -56,25 +54,17 @@ function handleCommand(command) {
 function appendOutput(content) {
     // Create a div for the content
     const newOutput = document.createElement('div');
+    newOutput.textContent = content;
 
-    // If the content is a string, set it as text content
-    if (typeof content === 'string') {
-        content.split('\n').forEach(line => {
-            const lineDiv = document.createElement('div');
-            lineDiv.textContent = line;
-            newOutput.appendChild(lineDiv);
-        });
-    } else {
-        newOutput.appendChild(content);
-    }
-
-    // Create an empty line as a separator
-    const emptyLine = document.createElement('div');
-    emptyLine.textContent = '';
-
-    // Insert the empty line and the content before the existing content
-    output.insertBefore(emptyLine, output.firstChild);
+    // Insert the content before the existing content
     output.insertBefore(newOutput, output.firstChild);
+
+    // If the content is not empty, add an empty line as a separator
+    if (content.trim() !== '') {
+        const emptyLine = document.createElement('div');
+        emptyLine.textContent = '';
+        output.insertBefore(emptyLine, newOutput);
+    }
 
     // Scroll to the bottom of the output container
     output.scrollTop = output.scrollHeight;
