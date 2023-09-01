@@ -1,4 +1,4 @@
-<script>
+
     document.addEventListener("DOMContentLoaded", function () {
     const input = document.getElementById("command-input");
     const output = document.querySelector(".output");
@@ -135,4 +135,3 @@
         }
     });
 });
-</script >
