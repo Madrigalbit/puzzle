@@ -35,7 +35,7 @@ function handleCommand(command) {
     // Sample commands and responses
     switch (command.toLowerCase()) {
             
-        case 'HELP.EXE':
+        case 'help':
             appendOutput(`
                 <br />
                 <p>Welcome to the Galactic Prison Terminal Interface! To navigate through the system and access various programs, please use the following commands:</p>
