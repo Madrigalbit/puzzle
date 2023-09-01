@@ -37,7 +37,7 @@ function handleCommand(command) {
         case 'help':
             appendOutput('\nWelcome to the Galactic Prison Terminal Interface! To navigate through the system and access various programs, please use the following commands:\n\n● LIST.PROGS: Displays a list of available programs and their descriptions.\n● INFO [program_name]: Provides detailed information about the selected program.\n● LOGOUT: Logs you out of the terminal and returns you to the main menu.\nTo get started, simply type your desired command and follow the prompts. Keep your limbs and tentacles inside the terminal at all times, and dont access any programs that you dont have clearance to.\n');
             break;
-        case 'INFO STAFF.EXE':
+        case 'info':
             appendOutput('Display list of staff names at current installation. Example: “staff/gumbert”\nGumbert\nClippy\nJanitor\nAdmin\n');
             break;
         case 'help':
