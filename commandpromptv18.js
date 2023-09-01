@@ -3,7 +3,7 @@ const output = document.querySelector('.output');
 
 // Function to display a welcome message
 function displayWelcomeMessage() {
-    const welcomeMessage = "Welcome to the Command Prompt!<br />Type 'help' to see available commands.<br />";
+    const welcomeMessage = "Welcome to the Command Prompt!<br></br>Type 'help' to see available commands.<br></br>";
     appendOutput(welcomeMessage);
 }
 
