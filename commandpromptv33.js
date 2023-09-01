@@ -63,11 +63,6 @@ function appendOutput(content) {
                 const lineDiv = document.createElement('div');
                 lineDiv.textContent = line;
                 newOutput.appendChild(lineDiv);
-
-                // Add an empty line as a separator
-                const emptyLine = document.createElement('div');
-                emptyLine.textContent = '';
-                newOutput.appendChild(emptyLine);
             } else {
                 // Add an empty line for empty lines in the content
                 const emptyLine = document.createElement('div');
@@ -79,6 +74,11 @@ function appendOutput(content) {
         // If the content is an HTML element, append it directly
         newOutput.appendChild(content);
     }
+
+    // Add an empty line as a separator
+    const emptyLine = document.createElement('div');
+    emptyLine.textContent = '';
+    newOutput.appendChild(emptyLine);
 
     // Insert the content before the existing content
     output.insertBefore(newOutput, output.firstChild);
