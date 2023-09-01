@@ -132,6 +132,6 @@
 
     // Ensure the new response is on a new line
     output.innerHTML += "<br />";
-        }
+        })
     });
 });
