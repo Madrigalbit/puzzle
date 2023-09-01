@@ -33,7 +33,7 @@ function handleCommand(command) {
     // For example, you can check the command and provide a response
 
     // Sample commands and responses
-    switch (command.toLowerCase()) {\
+    switch (command.toLowerCase()) {
             
     // List of Basic commands within the command prompt
         default:
