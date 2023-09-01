@@ -4,9 +4,7 @@ const output = document.querySelector('.output');
 // Function to display a welcome message
 function displayWelcomeMessage() {
     const welcomeMessage = "Welcome to the Command Prompt!<br>Type 'help' to see available commands.";
-    const messageDiv = document.createElement('div');
-    messageDiv.innerHTML = welcomeMessage;
-    appendOutput(messageDiv);
+    appendOutput(welcomeMessage);
 }
 
 // Call the function to display the welcome message when the page loads
@@ -49,17 +47,14 @@ function handleCommand(command) {
     }
 }
 
-function appendOutput(text) {
-    // Create a div for the text
-    const newOutput = document.createElement('div');
-    newOutput.textContent = text;
-
-    // Create a line break element
-    const lineBreak = document.createElement('br');
-
-    // Insert the line break and the text before the existing content
-    output.insertBefore(newOutput, output.firstChild);
-    output.insertBefore(lineBreak, newOutput);
+function appendOutput(content) {
+    if (typeof content === 'string') {
+        const newOutput = document.createElement('div');
+        newOutput.innerHTML = content;
+        output.insertBefore(newOutput, output.firstChild);
+    } else {
+        output.insertBefore(content, output.firstChild);
+    }
 
     // Scroll to the bottom of the output container
     output.scrollTop = output.scrollHeight;
