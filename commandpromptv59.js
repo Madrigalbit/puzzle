@@ -143,7 +143,7 @@ function handleCommand(command) {
             case 'info schedule/q1':
             appendOutput(`
                 <br />
-                <p>---------------</p>
+                <p>---------------------------------------------</p>
                 <br />
                 <ul>
                     <li>Week 1: Prisoner Orientation (Lecture on the Various Ways of Cosmic Torture)</li>
@@ -159,14 +159,14 @@ function handleCommand(command) {
                     <li>Week 11+12: N/A</li>
                 </ul>
                 <br />
-                <p>---------------</p>
+                <p>---------------------------------------------</p>
             `);
             break;
 
             case 'info schedule/q2':
             appendOutput(`
                 <br />
-                <p>---------------</p>
+                <p>---------------------------------------------</p>
                 <br />
                 <ul>
                     <li>Week 1: "Gravity Shuffle" Dance Competition (Performed in Zero-G)</li>
@@ -182,14 +182,14 @@ function handleCommand(command) {
                     <li>Week 11+12: Announce Bloodsport Tournament for Q3, Give Prisoners Time to Prepare</li>
                 </ul>
                 <br />
-                <p>---------------</p>
+                <p>---------------------------------------------</p>
             `);
             break;
 
             case 'info schedule/q3':
             appendOutput(`
                 <br />
-                <p>---------------</p>
+                <p>---------------------------------------------</p>
                 <br />
                 <ul>
                     <li>Week 1: "Nebula Nonsense" Stand-Up Comedy Night (Bad Jokes Result in Solitary. Jokes About Facility Having Inhumane Living Conditions Result in Execution)</li>
@@ -206,11 +206,81 @@ function handleCommand(command) {
                     <li>Week 12: Reroute Security to Ensure VIP Remains Locked Up</li>
                 </ul>
                 <br />
-                <p>---------------</p>
+                <p>---------------------------------------------</p>
             `);
             break;
 
-            
+            case 'info monthly_entries':
+            appendOutput(`
+                <br />
+                <p>View Users most recent documented logs.</p>
+                <br />
+                <ul>
+                    <li>02.12.2552</li>
+                    <li>05.02.2552</li>
+                    <li>08.20.2552</li>
+                    <li>09.15.2552</li>
+                    <li>09.19.2552</li>
+                </ul>
+                <br />
+                <p>To target specific Information, please follow this format - Example: 'info monthly_entries/target'</p>
+            `);
+            break;
+
+            case 'info monthly_entries/02.12.2552':
+            appendOutput(`
+                <br />
+                <p>Entry 1 Stardate 02.12.2552:</p>
+                <br />
+                <p>Oh, flibbering florpoids! Just when I thought my brain couldn't handle any more chaos, these greedy inmates are now clamoring for extra meals in their cosmic confinement. Seriously, managing the network for an intergalactic slammer is like trying to fix a hyperspace drive with bubblegum and rubber bands. They're all like, "Gumbert, we're starving!" And I'm here, thinking, "Well, eat your allocated one meal a day and be grateful you're not floating in the void of space for committing tax fraud, you gorbdrabbers!"</p>
+                <br />
+                <p>I didn't travel across the galaxy to referee this insane asylum of a prison but I guess that’s where we’re at now. With their tentacles, antennae, and unpronounceable names, half the time I can't even tell who's complaining about what. And who cares! They don’t have rights! And let's not even mention the constant barrage of quirky requests, like installing holo-screens showing mind-numbingly boring space documentaries in their cells. Oh sure, let's just make prison feel like a vacation at a malfunctioning warp drive factory. Arrogant creatures!</p>    
+            `);
+            break;
+
+            case 'info monthly_entries/05.02.2552':
+            appendOutput(`
+                <br />
+                <p>Entry 2 Stardate 05.02.2552:</p>
+                <br />
+                <p>Ugh, the cosmic calamities I have to deal with on a daily basis are enough to make any sentient being question their life choices. My role as the IT manager of this intergalactic prison is more befuddling than trying to decipher a code written in a language that consists solely of burps and squeaks (or even BLIPS, damn you Clippy). First off, there's the constant stream of escape attempts that somehow involve using toilet plungers as propulsion devices. I mean, who in the name of Zog uses a plunger to break the space-time continuum?</p>
+                <br />
+                <p>And don't get me started on the computer systems here. They're older than the universe itself, and I'm convinced that half the buttons on my control panel are there just to mess with my head. I spend half my day trying to decipher error messages that are written in a blend of hieroglyphics and interpretive dance. And then there's the delightful task of calming down the rogue AI janitor that's developed a fascination with using the cleaning supplies to create abstract art on the walls. It's like living in a demented cartoon crossed with a malfunctioning spacecraft.</p> 
+                <br />
+                <p>Honestly, if I had a dark matter credit for every time I've thought about blasting off to a deserted asteroid and starting a space moss farm, I'd be able to buy my own pocket universe by now. But no, here I am, stuck in this cosmic circus, juggling lasers and dealing with alien antics that would make a quantum physicist weep. And to think, all I wanted was a peaceful gig to make easy money.</p>
+            `);
+            break;
+
+            case 'info monthly_entries/08.20.2552':
+            appendOutput(`
+                <br />
+                <p>Entry 3 Stardate 08.20.2552:</p>
+                <br />
+                <p>After having to jettison yet another nerr do well prisoner out into the depths of space for complaining about his cellmate dying of thirst (we only have so much h20 to go around) something interesting came across my desk. After eons of dealing with interstellar degenerates, this could be a flicker of excitement. Binary blunders… could this be it?  Earlier today, I received a transmission from a mysterious benefactor – apparently, they're entrusting us with a high value prisoner. Sweet stardust, the possibilities are endless! Maybe it's an infamous space pirate with a penchant for galactic genocide or a mastermind hacker who writes viruses in rhyming space poetry.</p>
+                <br />
+                <p>Could this be the cosmic curveball that makes my otherwise mind-numbing existence worth its weight in neutronium? Maybe it's a cute female from Zorbeon VII? Maybe this could be a cosmic fate…</p> 
+            `);
+            break;
+
+            case 'info monthly_entries/09.15.2552':
+            appendOutput(`
+                <br />
+                <p>Entry 4 Stardate 09.15.2552:</p>
+                <br />
+                <p>Oh tenancies tendrils, here’s the rub - I overheard the Janitor chattering about the incoming VIP. A sentient dog plucked from some backwater mud ball of a planet. My excitement crashes faster than a meteor shower.</p>
+                <br />
+                <p>A sentient dog? Seriously? After all the wild conjectures my overactive imagination conjured, it's a furry quadruped from the space-age equivalent of a petting zoo? The universe has an impeccable knack for dousing my enthusiasm in a vat of slime. Why does cruel fate punish me so? I’m a good person! I’ve helped change so many lives rehabilitating people!! Just when I thought things couldn't get any loopier, I'm about to be the custodian of a canine convict. Well, at least I'll have a new entry for the annals of intergalactic absurdity.</p> 
+            `);
+            break;
+
+            case 'info monthly_entries/09.19.2552':
+            appendOutput(`
+                <br />
+                <p>Entry 5 Stardate 09.19.2552:</p>
+                <br />
+                <p>Something weird is happening with the onboard AI. Can’t seem to really figure it out but I can’t be bothered to care. I don’t get paid enough to care THAT much, and besides they don’t pay enough. If our bosses weren’t such cheapskates we could have upgraded our servos to the latest version of encryption. I’m sure one of the inmates clicked on something he shouldn’t have again on the holosphere and infected way beyond their limited recreational access. This will no doubt take me all of this month to rewrite and fix!! But the admin hasn’t noticed yet and I’m going to play dumb until he does… more work for me if not. I’m going to have the inmates flogged one by one until they tell me who did this. I’m such a nice guy, why do they put me in these terrible situations? I swear if this malware delays the shipments of food and water for the inmates I will never hear the end of it. My troubles never cease…</p>
+            `);
+            break;
 
         
     }
