@@ -51,12 +51,12 @@ function appendOutput(text) {
     // Create a div for the text
     const newOutput = document.createElement('div');
     newOutput.textContent = text;
-    
-    // Insert an empty line before the text
+
+    // Create an empty line as a separator
     const emptyLine = document.createElement('div');
     emptyLine.textContent = '';
-    
-    // Add the empty line and the text to the output
+
+    // Insert the empty line before the text
     output.appendChild(emptyLine);
     output.appendChild(newOutput);
 
