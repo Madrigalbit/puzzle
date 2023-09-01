@@ -59,17 +59,9 @@ function appendOutput(content) {
     // Create a div for the content
     const newOutput = document.createElement('div');
 
-    // If the content is a string, set it as text content
     if (typeof content === 'string') {
-        const lines = content.split('\n');
-        for (let i = 0; i < lines.length; i++) {
-            const line = lines[i].trim(); // Trim to handle empty lines
-            if (line !== '') {
-                const lineDiv = document.createElement('div');
-                lineDiv.textContent = line;
-                newOutput.appendChild(lineDiv);
-            }
-        }
+        // Use innerHTML to render HTML tags
+        newOutput.innerHTML = content;
     } else {
         // If the content is an HTML element, append it directly
         newOutput.appendChild(content);
