@@ -48,13 +48,24 @@ function handleCommand(command) {
 }
 
 function appendOutput(content) {
+    // Create a div for the content
+    const newOutput = document.createElement('div');
+
+    // If the content is a string, set it as text content
     if (typeof content === 'string') {
-        const newOutput = document.createElement('div');
-        newOutput.innerHTML = content;
-        output.insertBefore(newOutput, output.firstChild);
+        newOutput.textContent = content;
     } else {
-        output.insertBefore(content, output.firstChild);
+        // If the content is an HTML element, append it directly
+        newOutput.appendChild(content);
     }
+
+    // Create an empty line as a separator
+    const emptyLine = document.createElement('div');
+    emptyLine.textContent = '';
+
+    // Insert the empty line and the content before the existing content
+    output.insertBefore(emptyLine, output.firstChild);
+    output.insertBefore(newOutput, output.firstChild);
 
     // Scroll to the bottom of the output container
     output.scrollTop = output.scrollHeight;
