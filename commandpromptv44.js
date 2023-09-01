@@ -71,13 +71,12 @@ function appendOutput(content) {
         newOutput.appendChild(content);
     }
 
-    // Create a spacer element for spacing
-    const spacer = document.createElement('div');
-    spacer.className = 'spacer'; // Apply CSS class for spacing
+    // Add a line break for spacing
+    const lineBreak = document.createElement('br');
+    newOutput.appendChild(lineBreak);
 
-    // Insert the spacer and the content before the existing content
+    // Insert the content before the existing content
     output.insertBefore(newOutput, output.firstChild);
-    output.insertBefore(spacer, newOutput);
 
     // Scroll to the bottom of the output container
     output.scrollTop = output.scrollHeight;
