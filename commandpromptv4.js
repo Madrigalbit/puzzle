@@ -5,10 +5,11 @@
 
     // Add initial text when the page loads
     output.innerHTML = "PE-T1 Data Terminal Osiris.<br />Stardate 2552.<br />ROM BIOS LOADED v9.2 - rev 7<br />RAM CRC check: (000000h)<br />Drive - Serial: 4204694 - DETECTED<br />INPUT SYSTEM - VIRTUAL<br />Booting.<br />Ports SECURE: [TAPS: 00]<br />Encryption:[ENABLED-204umn1]<br />Virus Scan - '.....CHECKING…..'<br />BOOT: ProspectEdenAdmin.exe<br />BOOT SUCCESSFUL.<br />WELCOME.<br />Welcome USER to Prospect Eden's Administrative Menu. Type 'help' for help.<br />";
-    input.addEventListener("keyup", function (event) {
+    input.addEventListener("keydown", function (event) {
         if (event.key === "Enter") {
+            event.preventDefault(); // Prevent the default behavior (line break)
             const command = input.value.toLowerCase();
-    input.value = ""; // Clear the input field
+            input.value = ""; // Clear the input field
 
     // Handle different commands
     switch (command) {
