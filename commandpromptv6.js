@@ -1,6 +1,6 @@
         document.addEventListener("DOMContentLoaded", function () {
             const input = document.getElementById("command-input");
-            const output = document.getElementById("output");
+            const output = document.getElementById(".output");
             
             const welcomeMessage = "Welcome to the Command Prompt!\nType 'help' for available commands.\n\n";
             let currentIndex = 0;
