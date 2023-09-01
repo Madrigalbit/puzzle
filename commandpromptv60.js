@@ -55,6 +55,124 @@ function handleCommand(command) {
                 <p>To get started, simply type your desired command and follow the prompts. Keep your limbs and tentacles inside the terminal at all times, and don't access any programs that you don't have clearance to.</p>
             `);
             break;
+      // List of "progs" commands within the command prompt
+            
+            case 'progs':
+            appendOutput(`
+                <br />
+                <p>Available programs stored within our database</p>
+                <br />
+                <ul>
+                    <li>access: View security feeds</li>
+                    <li>coinflip.exe: Test your fate with the invisible hand of chance...</li>
+                    <li>admin_dir: Access different directorys(PASSWORD-PROTECTED)</li>
+                </ul>
+                <br />
+                <p>To target specific Information, please follow this format - Example: 'progs target'</p>      
+            `);
+            break;
+
+            case 'progs access':
+            appendOutput(`
+                <br />
+                <p>Security live feeds available.</p>
+                <br />
+                <ul>
+                    <li>mess_hall</li>
+                    <li>rec_room</li>
+                    <li>cells</li>
+                    <li>vaults</li>
+                    <li>vip</li>
+                </ul>
+                <br />
+                <p>To target specific Information, please follow this format - Example: 'progs access/target'</p>      
+            `);
+            break;
+
+            case 'progs coinflip.exe':
+            appendOutput(`
+                <br />
+                <p>BOOT: AGESPAST.exe</p>
+                <p>BOOT SUCCESSFUL.</p>
+                <br />
+                <p>THE COIN BEFORE YOU BEARS THE WEIGHT OF HISTORY IN ITS CORRODED GROOVES, A SILENT WITNESS TO AGES LONG PAST.</p>
+                <br />
+                <p>WHAT WILL YOU DO?</p>
+                <br />
+                <ul>
+                    <li>flip</li>
+                    <li>examine</li>
+                    <li>leave</li>
+                </ul>      
+            `);
+            break;
+
+            case 'flip':
+            appendOutput(`
+                <br />
+                <p>WITH A FLICK OF YOUR THUMB, THE RUSTY COIN SPINS THROUGH THE AIR, ITS BATTERED SURFACE REFLECTING FLEETING MOMENTS OF LIGHT - EONS IN AN INSTANCE.</p>
+                <br />
+                <p>IT LANDS.</p>
+                <br />
+                <p>……………………..</p>
+                <br />
+                <p>HEADS</p>   
+            `);
+            break;
+
+            case 'examine':
+            appendOutput(`
+                <br />
+                <p>THE OLD COIN IS LITTERED WITH SCRATCHES, INDENTS, AND WORN EDGES - A MONUMENT TO TIME. THE FATE OF MUCH HAS HINGED ON THIS ORDINARY OBJECT.</p>
+            `);
+            break;
+
+            case 'leave':
+            appendOutput(`
+                <br />
+                <p>YOU WALK AWAY FROM THE COIN.</p>
+            `);
+            break;
+
+            case 'progs admin_dir':
+            appendOutput(`
+                <br />
+                <p>Access another directory.</p>
+                <br />
+                <ul>
+                    <li>segment_two</li>
+                    <li>segment_three</li>
+                </ul>
+                <p>To target a specific directory, please follow this format - Example: 'progs admin_dir/segment_two'</p>
+            `);
+            break;
+
+            case 'progs admin_dir/segment_two':
+            appendOutput(`
+                <br />
+                <p>Please input passcode (do not use spaces):</p>
+            `);
+            break;
+
+            case 'ThedayIrest':
+            appendOutput(`
+                <br />
+                <p>Accessing...</p>
+                <br />
+                <p>Accessing...</p>
+                <br />
+                <p>Permission Granted.</p>
+                <br />
+                <p>New commands available!</p>
+                <br />
+                <ul>
+                    <li>fortune</li>
+                    <li>listen</li>
+                    <li>communications</li>
+                </ul>
+            `);
+            break;
+            
       // List of "info" commands within the command prompt 
             
         case 'info':
