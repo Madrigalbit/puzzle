@@ -59,9 +59,12 @@ function appendOutput(content) {
 
     // If the content is a string, set it as text content
     if (typeof content === 'string') {
-        newOutput.textContent = content;
+        content.split('\n').forEach(line => {
+            const lineDiv = document.createElement('div');
+            lineDiv.textContent = line;
+            newOutput.appendChild(lineDiv);
+        });
     } else {
-        // If the content is an HTML element, append it directly
         newOutput.appendChild(content);
     }
 
