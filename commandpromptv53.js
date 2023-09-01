@@ -33,7 +33,12 @@ function handleCommand(command) {
     // For example, you can check the command and provide a response
 
     // Sample commands and responses
-    switch (command.toLowerCase()) {
+    switch (command.toLowerCase()) {\
+            
+    // List of Basic commands within the command prompt
+        default:
+            appendOutput(`Command not recognized: ${command}`);
+            break;
             
         case 'help':
             appendOutput(`
@@ -41,22 +46,31 @@ function handleCommand(command) {
                 <p>Welcome to the Galactic Prison Terminal Interface! To navigate through the system and access various programs, please use the following commands:</p>
                 <br />
                 <ul>
-                    <li>LIST.PROGS: Displays a list of available programs and their descriptions.</li>
-                    <li>INFO [program_name]: Provides detailed information about the selected program.</li>
-                    <li>LOGOUT: Logs you out of the terminal and returns you to the main menu.</li>
+                    <li>progs: Displays a list of available programs and their descriptions.</li>
+                    <li>info: Displays a list of available stored information.</li>
+                    <li>logout: Logs you out of the terminal and returns you to the main menu.</li>
                 </ul>
                 <br />
                 <p>To get started, simply type your desired command and follow the prompts. Keep your limbs and tentacles inside the terminal at all times, and don't access any programs that you don't have clearance to.</p>
             `);
             break;
-            
+      // List of "info" commands within the command prompt      
         case 'info':
-            appendOutput('Display list of staff names at current installation. Example: “staff/gumbert”\nGumbert\nClippy\nJanitor\nAdmin\n');
+            appendOutput(`
+                <br />
+                <p>Information stored within our database.</p>
+                <br />
+                <ul>
+                    <li>staff: View staff information.</li>
+                    <li>schedule: View schedule information.</li>
+                    <li>monthly_entries: View monthly logs.</li>
+                </ul>
+                <br />
+                <p>To target specific Information, please follow this format - Example: 'info target'</p>      
+            `);
             break;
 
-        default:
-            appendOutput(`Command not recognized: ${command}`);
-            break;
+        
     }
 }
 
