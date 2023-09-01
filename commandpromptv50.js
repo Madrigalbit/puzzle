@@ -36,13 +36,17 @@ function handleCommand(command) {
     switch (command.toLowerCase()) {
         case 'help':
             appendOutput(`
+                <br />
                 <p>Welcome to the Galactic Prison Terminal Interface! To navigate through the system and access various programs, please use the following commands:</p>
+                <br />
                 <ul>
                     <li>LIST.PROGS: Displays a list of available programs and their descriptions.</li>
                     <li>INFO [program_name]: Provides detailed information about the selected program.</li>
                     <li>LOGOUT: Logs you out of the terminal and returns you to the main menu.</li>
                 </ul>
+                <br />
                 <p>To get started, simply type your desired command and follow the prompts. Keep your limbs and tentacles inside the terminal at all times, and don't access any programs that you don't have clearance to.</p>
+                <br />
             `);
             break;
         case 'info':
