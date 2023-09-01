@@ -3,7 +3,7 @@ const output = document.querySelector('.output');
 
 // Function to display a welcome message
 function displayWelcomeMessage() {
-    const welcomeMessage = "Welcome to the Command Prompt!<br></br>Type 'help' to see available commands.<br></br>";
+    const welcomeMessage = "Welcome to the Command Prompt! Type 'help' to see available commands.";
     appendOutput(welcomeMessage);
 }
 
@@ -48,8 +48,9 @@ function handleCommand(command) {
 }
 
 function appendOutput(text) {
+    // Create a div for the text with a newline character at the end
     const newOutput = document.createElement('div');
-    newOutput.textContent = text;
+    newOutput.textContent = text + '\n';
     
     // Insert the new output at the beginning of the output area
     output.insertBefore(newOutput, output.firstChild);
