@@ -3,7 +3,7 @@ const output = document.querySelector('.output');
 
 // Function to display a welcome message
 function displayWelcomeMessage() {
-    const welcomeMessage = "PE-T1 Data Terminal Osiris.\nStardate 2552.\nROM BIOS LOADED v9.2 - rev 7\nRAM CRC check: (000000h)\nDrive - Serial: 4204694 - DETECTED\nINPUT SYSTEM - VIRTUAL\nBooting.\nPorts SECURE: [TAPS: 00]\nEncryption:[ENABLED-204umn1]\nVirus Scan - '.....CHECKING…..'\nBOOT: ProspectEdenAdmin.exe\nBOOT SUCCESSFUL.\nWELCOME.\nWelcome USER to Prospect Eden's Administrative Menu. Type 'help' for help.\n";
+    const welcomeMessage = "PE-T1 Data Terminal Osiris.\nStardate 2552.\nROM BIOS LOADED v9.2 - rev 7\nRAM CRC check: (000000h)\nDrive - Serial: 4204694 - DETECTED\nINPUT SYSTEM - VIRTUAL\nBooting.\nPorts SECURE: [TAPS: 00]\nEncryption:[ENABLED-204umn1]\nVirus Scan - '.....CHECKING…..'\nBOOT: ProspectEdenAdmin.exe\nBOOT SUCCESSFUL.\nWELCOME.\nWelcome USER to Prospect Eden's Administrative Menu. Type 'HELP.EXE' for help.\n";
     const messageLines = welcomeMessage.split('\n');
     
     messageLines.forEach(line => {
@@ -34,7 +34,8 @@ function handleCommand(command) {
 
     // Sample commands and responses
     switch (command.toLowerCase()) {
-        case 'help':
+            
+        case 'HELP.EXE':
             appendOutput(`
                 <br />
                 <p>Welcome to the Galactic Prison Terminal Interface! To navigate through the system and access various programs, please use the following commands:</p>
@@ -46,9 +47,9 @@ function handleCommand(command) {
                 </ul>
                 <br />
                 <p>To get started, simply type your desired command and follow the prompts. Keep your limbs and tentacles inside the terminal at all times, and don't access any programs that you don't have clearance to.</p>
-                <br />
             `);
             break;
+            
         case 'info':
             appendOutput('Display list of staff names at current installation. Example: “staff/gumbert”\nGumbert\nClippy\nJanitor\nAdmin\n');
             break;
