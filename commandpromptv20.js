@@ -48,13 +48,18 @@ function handleCommand(command) {
 }
 
 function appendOutput(text) {
-    // Create a div for the text with a newline character at the end
+    // Create a div for the text
     const newOutput = document.createElement('div');
-    newOutput.textContent = text + '\n';
+    newOutput.textContent = text;
     
-    // Insert the new output at the beginning of the output area
-    output.insertBefore(newOutput, output.firstChild);
+    // Insert an empty line before the text
+    const emptyLine = document.createElement('div');
+    emptyLine.textContent = '';
     
+    // Add the empty line and the text to the output
+    output.appendChild(emptyLine);
+    output.appendChild(newOutput);
+
     // Scroll to the bottom of the output container
     output.scrollTop = output.scrollHeight;
 }
