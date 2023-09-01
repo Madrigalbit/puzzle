@@ -35,7 +35,7 @@ function handleCommand(command) {
     // Sample commands and responses
     switch (command.toLowerCase()) {
         case 'help':
-            appendOutput('Welcome to the Galactic Prison Terminal Interface! To navigate through the system and access various programs, please use the following commands:\n● LIST.PROGS: Displays a list of available programs and their descriptions.\n● INFO [program_name]: Provides detailed information about the selected program.\n● LOGOUT: Logs you out of the terminal and returns you to the main menu.\nTo get started, simply type your desired command and follow the prompts. Keep your limbs and tentacles inside the terminal at all times, and dont access any programs that you dont have clearance to.\n');
+            appendOutput('\nWelcome to the Galactic Prison Terminal Interface! To navigate through the system and access various programs, please use the following commands:\n\n● LIST.PROGS: Displays a list of available programs and their descriptions.\n● INFO [program_name]: Provides detailed information about the selected program.\n● LOGOUT: Logs you out of the terminal and returns you to the main menu.\nTo get started, simply type your desired command and follow the prompts. Keep your limbs and tentacles inside the terminal at all times, and dont access any programs that you dont have clearance to.\n');
             break;
         case 'date':
             const currentDate = new Date();
