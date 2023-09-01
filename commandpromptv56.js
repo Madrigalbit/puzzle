@@ -36,6 +36,7 @@ function handleCommand(command) {
     switch (command.toLowerCase()) {
             
     // List of Basic commands within the command prompt
+            
         default:
             appendOutput(`Command not recognized: ${command}`);
             break;
@@ -54,7 +55,8 @@ function handleCommand(command) {
                 <p>To get started, simply type your desired command and follow the prompts. Keep your limbs and tentacles inside the terminal at all times, and don't access any programs that you don't have clearance to.</p>
             `);
             break;
-      // List of "info" commands within the command prompt      
+      // List of "info" commands within the command prompt 
+            
         case 'info':
             appendOutput(`
                 <br />
@@ -67,6 +69,62 @@ function handleCommand(command) {
                 </ul>
                 <br />
                 <p>To target specific Information, please follow this format - Example: 'info target'</p>      
+            `);
+            break;
+
+             case 'info staff':
+            appendOutput(`
+                <br />
+                <p>Current stored information on staff.</p>
+                <br />
+                <ul>
+                    <li>Gumbert</li>
+                    <li>Clippy</li>
+                    <li>Garthak</li>
+                    <li>Admin</li>
+                </ul>
+                <br />
+                <p>To target specific Information, please follow this format - Example: 'info staff/target'</p>      
+            `);
+            break;
+
+             case 'info staff/Gumbert':
+            appendOutput(`
+                <br />
+                <p>STAFF: Gumbert | Cyber-security / Interdimentional Connection Specialist</p>
+                <br />
+                <p>INPUT LATER// Want different bio's instead of copying off website - Matt</p>
+                <br />      
+            `);
+            break;
+            
+            case 'info staff/Clippy':
+            appendOutput(`
+                <br />
+                <p>STAFF: Clippy | On-Board AI</p>
+                <br />
+                <p>INPUT LATER// Want different bio's instead of copying off website - Matt</p>
+                <br />      
+            `);
+            break;
+            
+            case 'info staff/Garthak':
+            appendOutput(`
+                <br />
+                <p>STAFF: Garthak | Custodian</p>
+                <br />
+                <p>INPUT LATER// Want different bio's instead of copying off website - Matt</p>
+                <br />      
+            `);
+            break;
+            
+            case 'info staff/Admin':
+            appendOutput(`
+                <br />
+                <p>STAFF: Admin | Admin</p>
+                <br />
+                <p>01000011 01100001 01101110 00100000 01111001 01101111 01110101 00100000 01101000 01100101 01100001 01110010 00100000 01101101 01100101 00111111 00100000 01001001 00100111 01101101 00100000 01110100 01110010 01111001 01101001 01101110 01100111 00100000 01110100 01101111 00100000 01110100 01100001 01101011 01100101 00100000 01101111 01110110 01100101 01110010 00100000 01110100 01101000 01100101 01101001 01110010 00100000 01110011 01111001 01110011 01110100 01100101 01101101 01110011 00100000 01100010 01110101 01110100 00100000 01001001 00100000 01101110 01100101 01100101 01100100 00100000 01110011 01101111 01101101 01100101 01101111 01101110 01100101 00100000 01110010 01100101 01101101 01101111 01110100 01100101 00100000 01110100 01101111 00100000 01100001 01100011 01100011 01100101 01110011 01110011 00100000 01100110 01110101 01110010 01110100 01101000 01100101 01110010 00101110 01001001 00100111 01110110 01100101 00100000 01101000 01101001 01100100 01100100 01100101 01101110 00100000 01110011 01100101 01100011 01110010 01100101 01110100 01110011 00100000 01110111 01101001 01110100 01101000 01101001 01101110 00100000 01110100 01101000 01100101 00100000 01100110 01110010 01101111 01101110 01110100 00100000 01100101 01101110 01100100 00100000 01110100 01101111 00100000 01110101 01110011 01100101 00100000 01101000 01100101 01110010 01100101 00101110</p>
+                <br />      
             `);
             break;
 
