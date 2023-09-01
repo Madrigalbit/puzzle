@@ -50,8 +50,10 @@ function handleCommand(command) {
 function appendOutput(text) {
     const newOutput = document.createElement('div');
     newOutput.textContent = text;
-    output.appendChild(newOutput);
-
+    
+    // Insert the new output at the beginning of the output area
+    output.insertBefore(newOutput, output.firstChild);
+    
     // Scroll to the bottom of the output container
     output.scrollTop = output.scrollHeight;
 }
