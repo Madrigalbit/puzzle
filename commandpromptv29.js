@@ -3,8 +3,14 @@ const output = document.querySelector('.output');
 
 // Function to display a welcome message
 function displayWelcomeMessage() {
-    const welcomeMessage = "Welcome to the Command Prompt!<br>Type 'help' to see available commands.";
-    appendOutput(welcomeMessage);
+    const welcomeMessage = "Welcome to the Command Prompt!\nType 'help' to see available commands.";
+    const messageLines = welcomeMessage.split('\n');
+    
+    messageLines.forEach(line => {
+        const messageDiv = document.createElement('div');
+        messageDiv.textContent = line;
+        appendOutput(messageDiv);
+    });
 }
 
 // Call the function to display the welcome message when the page loads
