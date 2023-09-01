@@ -54,17 +54,34 @@ function handleCommand(command) {
 function appendOutput(content) {
     // Create a div for the content
     const newOutput = document.createElement('div');
-    newOutput.textContent = content;
+
+    // If the content is a string, set it as text content
+    if (typeof content === 'string') {
+        content.split('\n').forEach(line => {
+            if (line.trim() !== '') {
+                // Create a div for each non-empty line
+                const lineDiv = document.createElement('div');
+                lineDiv.textContent = line;
+                newOutput.appendChild(lineDiv);
+
+                // Add an empty line as a separator
+                const emptyLine = document.createElement('div');
+                emptyLine.textContent = '';
+                newOutput.appendChild(emptyLine);
+            } else {
+                // Add an empty line for empty lines in the content
+                const emptyLine = document.createElement('div');
+                emptyLine.textContent = '';
+                newOutput.appendChild(emptyLine);
+            }
+        });
+    } else {
+        // If the content is an HTML element, append it directly
+        newOutput.appendChild(content);
+    }
 
     // Insert the content before the existing content
     output.insertBefore(newOutput, output.firstChild);
-
-    // If the content is not empty, add an empty line as a separator
-    if (content.trim() !== '') {
-        const emptyLine = document.createElement('div');
-        emptyLine.textContent = '';
-        output.insertBefore(emptyLine, newOutput);
-    }
 
     // Scroll to the bottom of the output container
     output.scrollTop = output.scrollHeight;
