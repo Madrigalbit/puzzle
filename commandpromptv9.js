@@ -2,7 +2,7 @@
             const input = document.getElementById("command-input");
             const output = document.querySelector(".output");
 
-            const welcomeMessage = "Welcome to the Command Prompt!<br>Type 'help' for available commands.<br>";
+            const welcomeMessage = "Welcome to the Command Prompt!<br/>Type 'help' for available commands.<br/>";
             let currentIndex = 0;
 
             function typeWelcomeMessage() {
@@ -23,13 +23,13 @@
                     // Handle different commands and display responses
                     switch (command) {
                         case "help":
-                            output.innerHTML += "Available commands:<br>- help: Show available commands<br>- date: Display current date<br>- echo [text]: Echo the provided text<br>- clear: Clear the screen<br><br>";
+                            output.innerHTML += "Available commands:<br/>- help: Show available commands<br/>- date: Display current date<br/>- clear: Clear the screen<br/>";
                             break;
 
                         case "date":
                             const currentDate = new Date();
                             const formattedDate = currentDate.toLocaleString();
-                            output.innerHTML += `Current date and time: ${formattedDate}<br>`;
+                            output.innerHTML += `Current date and time: ${formattedDate}<br/>`;
                             break;
 
                         case "clear":
@@ -38,7 +38,7 @@
                             break;
 
                         default:
-                            output.innerHTML += `Command not recognized: ${command}<br>`;
+                            output.innerHTML += `Command not recognized: ${command}<br/>`;
                     }
                 }
             });
