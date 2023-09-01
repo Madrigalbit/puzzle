@@ -154,7 +154,7 @@ function handleCommand(command) {
             `);
             break;
 
-            case 'ThedayIrest':
+            case 'thedayirest':
             appendOutput(`
                 <br />
                 <p>Accessing...</p>
