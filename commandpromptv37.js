@@ -71,11 +71,6 @@ function appendOutput(content) {
         newOutput.appendChild(content);
     }
 
-    // Create an empty line as a separator
-    const emptyLine = document.createElement('div');
-    emptyLine.textContent = '';
-    newOutput.appendChild(emptyLine);
-
     // Insert the content before the existing content
     output.insertBefore(newOutput, output.firstChild);
 
