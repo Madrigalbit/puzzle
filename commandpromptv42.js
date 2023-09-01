@@ -71,8 +71,13 @@ function appendOutput(content) {
         newOutput.appendChild(content);
     }
 
-    // Insert the content before the existing content
-    output.insertBefore(newOutput, output.firstChild);
+    // Create an empty line for spacing
+    const spacingLine = document.createElement('div');
+    spacingLine.style.height = '10px'; // Adjust the height for desired spacing
+
+    // Insert the spacing line before the content
+    output.insertBefore(spacingLine, output.firstChild);
+    output.insertBefore(newOutput, spacingLine);
 
     // Scroll to the bottom of the output container
     output.scrollTop = output.scrollHeight;
