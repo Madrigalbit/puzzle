@@ -54,7 +54,7 @@ function handleCommand(command) {
 function appendOutput(content) {
     // Create a div for the content
     const newOutput = document.createElement('div');
-    
+
     // If the content is a string, set it as text content
     if (typeof content === 'string') {
         const lines = content.split('\n');
@@ -71,13 +71,13 @@ function appendOutput(content) {
         newOutput.appendChild(content);
     }
 
-    // Create an empty line for spacing
-    const spacingLine = document.createElement('div');
-    spacingLine.style.height = '10px'; // Adjust the height for desired spacing
+    // Create a spacer element for spacing
+    const spacer = document.createElement('div');
+    spacer.className = 'spacer'; // Apply CSS class for spacing
 
-    // Insert the spacing line before the content
-    output.insertBefore(spacingLine, output.firstChild);
-    output.insertBefore(newOutput, spacingLine);
+    // Insert the spacer and the content before the existing content
+    output.insertBefore(newOutput, output.firstChild);
+    output.insertBefore(spacer, newOutput);
 
     // Scroll to the bottom of the output container
     output.scrollTop = output.scrollHeight;
