@@ -56,9 +56,9 @@ function appendOutput(text) {
     const emptyLine = document.createElement('div');
     emptyLine.textContent = '';
 
-    // Insert the empty line and the text before the existing content
+    // Add the empty line and the text before the existing content
     output.insertBefore(newOutput, output.firstChild);
-    output.insertBefore(emptyLine, output.firstChild);
+    output.insertBefore(emptyLine, newOutput);
 
     // Scroll to the bottom of the output container
     output.scrollTop = output.scrollHeight;
