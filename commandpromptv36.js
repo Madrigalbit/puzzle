@@ -71,13 +71,13 @@ function appendOutput(content) {
         newOutput.appendChild(content);
     }
 
-    // Insert the content before the existing content
-    output.insertBefore(newOutput, output.firstChild);
-
-    // Add an empty line as a separator
+    // Create an empty line as a separator
     const emptyLine = document.createElement('div');
     emptyLine.textContent = '';
-    output.insertBefore(emptyLine, newOutput);
+    newOutput.appendChild(emptyLine);
+
+    // Insert the content before the existing content
+    output.insertBefore(newOutput, output.firstChild);
 
     // Scroll to the bottom of the output container
     output.scrollTop = output.scrollHeight;
