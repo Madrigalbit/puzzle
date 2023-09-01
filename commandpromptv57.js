@@ -88,7 +88,7 @@ function handleCommand(command) {
             `);
             break;
 
-             case 'info staff/Gumbert':
+             case 'info staff/gumbert':
             appendOutput(`
                 <br />
                 <p>STAFF: Gumbert | Cyber-security / Interdimentional Connection Specialist</p>
