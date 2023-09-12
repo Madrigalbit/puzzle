@@ -34,6 +34,9 @@ function playAudio() {
     const audio = new Audio('https://www.fesliyanstudios.com/play-mp3/649'); // Replace with your audio file URL
     audio.play(); // Play the audio
 }
+const playButton = document.getElementById('play-button'); // Add an HTML button with id="play-button"
+playButton.addEventListener('click', playAudio); // Attach a click event listener to the play button
+
 
 function handleCommand(command) {
     // You can implement your command handling logic here
