@@ -55,6 +55,13 @@ function handleCommand(command) {
                 <p>To get started, simply type your desired command and follow the prompts. Keep your limbs and tentacles inside the terminal at all times, and don't access any programs that you don't have clearance to.</p>
             `);
             break;
+
+             case 'warning':
+            appendOutput(`
+                <br />
+                <p>Annihilators have friends in dark places, but so does Dogelon - M</p>
+            `);
+            break;
       // List of "progs" commands within the command prompt
             
             case 'progs':
