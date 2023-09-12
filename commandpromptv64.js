@@ -15,6 +15,8 @@ function displayWelcomeMessage() {
 window.addEventListener('load', displayWelcomeMessage);
 
 commandInput.addEventListener('keydown', function(event) {
+    playAudio();
+    
     if (event.key === 'Enter') {
         event.preventDefault();
         const command = commandInput.value;
@@ -27,6 +29,11 @@ commandInput.addEventListener('keydown', function(event) {
         handleCommand(command);
     }
 });
+
+function playAudio() {
+    const audio = new Audio('https://www.fesliyanstudios.com/play-mp3/649'); // Replace with your audio file URL
+    audio.play(); // Play the audio
+}
 
 function handleCommand(command) {
     // You can implement your command handling logic here
