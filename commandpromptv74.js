@@ -171,10 +171,12 @@ function handleCommand(command) {
             break;
             
             case 'progs admin_dir/segment_two':
-            appendOutput(`
-            <p>we got it to work!</p>
-            `);
-            break;
+             if (!isPasswordEntered) {
+                    appendOutput("<p>Access denied. Please enter the correct password to unlock this command.</p>");
+                } else {
+                    appendOutput("<p>Accessing admin directory...</p>");
+                }
+                break;
             
             
       // List of "info" commands within the command prompt 
