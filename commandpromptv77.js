@@ -6,7 +6,7 @@ const unlockPassword = "thedayirest";
 const commandConfig = {
     'progs admin_dir/segment_two': true,  // Requires a password
 };
-const fortune = [
+const randomMessages = [
     "This is a random message 1.",
     "Here's a completely random message.",
     "Random message number 3!",
@@ -211,10 +211,10 @@ function handleCommand(command) {
                 appendOutput("<p>Password accepted. You can now access segment_two...</p>");
                 break;
 
-            case 'progs fortune':
-            const randomIndex = Math.floor(Math.random() * fortune.length);
-            const fortune = fortune[randomIndex];
-            appendOutput(`<p>${fortune}</p>`);
+            case 'fortune':
+            const randomIndex = Math.floor(Math.random() * randomMessages.length);
+            const randomMessage = randomMessages[randomIndex];
+            appendOutput(`<p>${randomMessage}</p>`);
             break;
 
             
