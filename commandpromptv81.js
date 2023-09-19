@@ -80,7 +80,7 @@ function handleCommand(command) {
     // List of Basic commands within the command prompt
             
         default:
-            appendOutput(`Command not recognized: ${command}`);
+            appendOutput(`<br />Command not recognized: ${command}`);
             break;
             
         case 'help':
@@ -250,13 +250,18 @@ function handleCommand(command) {
             
             case 'thedayirest': // Replace "yourpassword" with the actual password
                 isPasswordEntered = true; // Set the password as entered
-                appendOutput("<p>Password accepted. You can now access segment_two...</p>");
+                appendOutput("<br /><p>Password accepted. You can now access segment_two...</p>");
+                break;
+
+            case 'CODEBREAKER01101100': // Replace "yourpassword" with the actual password
+                isPasswordEntered = true; // Set the password as entered
+                appendOutput("<br /><p>Password accepted. You can now access segment_three...</p>");
                 break;
 
             case 'progs fortune':
             const randomIndex = Math.floor(Math.random() * randomMessages.length);
             const randomMessage = randomMessages[randomIndex];
-            appendOutput(`<p>${randomMessage}</p>`);
+            appendOutput(`<br /><p>${randomMessage}</p>`);
             break;
 
             case 'progs listen':
