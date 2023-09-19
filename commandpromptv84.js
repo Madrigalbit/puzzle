@@ -70,12 +70,12 @@ function handleCommand(command) {
     // Check if the entered command requires a password
     const requiredPassword = commandConfig[command.toLowerCase()];
 
-    if (requiredPassword === 'adminPassword' && !isAdminPasswordEntered) {
-        appendOutput("<p>Access denied. Please enter the admin password to unlock this command.</p>");
-    } else if (requiredPassword === 'secretPassword' && !isSecretPasswordEntered) {
-        appendOutput("<p>Access denied. Please enter the secret password to unlock this command.</p>");
+    if (requiredPassword === unlockPassword && !isPasswordEntered) {
+        appendOutput("<p>Access denied. Please enter the correct password to view segment.</p>");
+    } else if (requiredPassword === secretPassword && !isSecretPasswordEntered) {
+        appendOutput("<p>Access denied. Please enter the correct password to view segment.</p>");
     } else {
-    switch (command.toLowerCase()) {
+        switch (command.toLowerCase()) {
             
     // List of Basic commands within the command prompt
             
@@ -198,7 +198,7 @@ function handleCommand(command) {
             break;
             
             case 'progs admin_dir/segment_two':
-             if (!isPasswordEntered) {
+                if (!isPasswordEntered) {
                     appendOutput("<p>Access denied. Please enter the correct password to view segment.</p>");
                 } else {
                     appendOutput(`
@@ -224,7 +224,7 @@ function handleCommand(command) {
                 break;
 
             case 'progs admin_dir/segment_three':
-             if (!isSecretPasswordEntered) {
+                if (!isSecretPasswordEntered) {
                     appendOutput("<p>Access denied. Please enter the correct password to view segment.</p>");
                 } else {
                     appendOutput(`
@@ -253,7 +253,7 @@ function handleCommand(command) {
                 appendOutput("<br /><p>Password accepted. You can now access segment_two...</p>");
                 break;
 
-            case 'CODEBREAKER01101100': // Replace "yourpassword" with the actual password
+            case 'CODEBREAKER01101100':
                 isSecretPasswordEntered = true; // Set the password as entered
                 appendOutput("<br /><p>Password accepted. You can now access segment_three...</p>");
                 break;
