@@ -170,32 +170,15 @@ function handleCommand(command) {
                 <p>To target a specific directory, please follow this format - Example: 'progs admin_dir/segment_two'</p>
             `);
             break;
-
+            
             case 'progs admin_dir/segment_two':
-            appendOutput(`
-                <br />
-                <p>Please input passcode (do not use spaces):</p>
-            `);
+            if (isPasswordEntered) {
+            appendOutput(`<p>Here is a list of commands you have unlocked...</p>`);
+            } else {
+            appendOutput(`<p>Access denied. Please enter the correct password to unlock this segment.</p>`);
+            }
             break;
-
-            case 'thedayirest':
-            appendOutput(`
-                <br />
-                <p>Accessing...</p>
-                <br />
-                <p>Accessing...</p>
-                <br />
-                <p>Permission Granted.</p>
-                <br />
-                <p>New commands available!</p>
-                <br />
-                <ul>
-                    <li>fortune</li>
-                    <li>listen</li>
-                    <li>communications</li>
-                </ul>
-            `);
-            break;
+            
             
       // List of "info" commands within the command prompt 
             
@@ -424,13 +407,7 @@ function handleCommand(command) {
             `);
             break;
 
-            case 'test':
-            if (isPasswordEntered) {
-            appendOutput("<p>Please input passcode (do not use spaces):</p>");
-            } else {
-            appendOutput("<p>Access denied. Please enter the correct password to unlock this segment.</p>");
-            }
-            break;
+            
         }
     }
 }
