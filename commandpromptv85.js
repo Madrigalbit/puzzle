@@ -5,7 +5,7 @@ let isSecretPasswordEntered = false;
 let listenCommandCount = 0;
 
 const unlockPassword = "thedayirest";
-const secretPassword = "CODEBREAKER01101100";
+const secretPassword = "codebreaker";
 const commandConfig = {
     'progs admin_dir/segment_two': unlockPassword,
     'progs admin_dir/segment_three': secretPassword,
@@ -253,7 +253,7 @@ function handleCommand(command) {
                 appendOutput("<br /><p>Password accepted. You can now access segment_two...</p>");
                 break;
 
-            case 'CODEBREAKER01101100':
+            case 'codebreaker':
                 isSecretPasswordEntered = true; // Set the password as entered
                 appendOutput("<br /><p>Password accepted. You can now access segment_three...</p>");
                 break;
