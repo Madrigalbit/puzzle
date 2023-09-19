@@ -416,38 +416,11 @@ function handleCommand(command) {
                 <p>Something weird is happening with the onboard AI. Can’t seem to really figure it out but I can’t be bothered to care. I don’t get paid enough to care THAT much, and besides they don’t pay enough. If our bosses weren’t such cheapskates we could have upgraded our servos to the latest version of encryption. I’m sure one of the inmates clicked on something he shouldn’t have again on the holosphere and infected way beyond their limited recreational access. This will no doubt take me all of this month to rewrite and fix!! But the admin hasn’t noticed yet and I’m going to play dumb until he does… more work for me if not. I’m going to have the inmates flogged one by one until they tell me who did this. I’m such a nice guy, why do they put me in these terrible situations? I swear if this malware delays the shipments of food and water for the inmates I will never hear the end of it. My troubles never cease…</p>
             `);
             break;
-
-             case 'command2':
-            // Check if a password is required and prompt the user for it
-            if (passwordRequired('command2')) {
-                appendOutput('Password required for this command.');
-            } else {
-                appendOutput('Command 2 executed.');
-            }
-            break;
-
         
     }
 }
 
-// Function to check if a password is required for a command
-function passwordRequired(command) {
-    // Define the commands that require passwords and their associated passwords
-    const passwordProtectedCommands = {
-        'command2': 'password2',
-        'command3': 'password3',
-    };
 
-    // Check if the command is in the password-protected list
-    if (passwordProtectedCommands.hasOwnProperty(command)) {
-        const requiredPassword = passwordProtectedCommands[command];
-        const enteredPassword = prompt(`Enter password for ${command}:`);
-        return enteredPassword !== requiredPassword;
-    }
-
-    // Return false if the command is not password-protected
-    return false;
-}
 
 function appendOutput(content) {
     // Create a div for the content
