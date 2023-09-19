@@ -171,8 +171,9 @@ function handleCommand(command) {
             break;
             
             case 'progs admin_dir/segment_two':
-            appendOutput(`<p>we got it to work!</p>`);
-            }
+            appendOutput(`
+            <p>we got it to work!</p>
+            `);
             break;
             
             
