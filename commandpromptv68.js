@@ -1,5 +1,7 @@
 const commandInput = document.getElementById('command-input');
 const output = document.querySelector('.output');
+const unlockPassword = "thedayirest";
+let isPasswordEntered = false;
 
 // Function to display a welcome message
 function displayWelcomeMessage() {
@@ -39,10 +41,15 @@ playButton.addEventListener('click', playAudio); // Attach a click event listene
 
 
 function handleCommand(command) {
-    // You can implement your command handling logic here
-    // For example, you can check the command and provide a response
-
-    // Sample commands and responses
+    if (!isPasswordEntered) {
+        // Check if the entered command is the password
+        if (command === unlockPassword) {
+            appendOutput("<p>Password accepted. Access granted.</p>");
+            isPasswordEntered = true;
+        } else {
+            appendOutput("<p>Access denied. Please enter the correct password to unlock commands.</p>");
+        }
+    } else {
     switch (command.toLowerCase()) {
             
     // List of Basic commands within the command prompt
@@ -415,6 +422,14 @@ function handleCommand(command) {
                 <br />
                 <p>Something weird is happening with the onboard AI. Can’t seem to really figure it out but I can’t be bothered to care. I don’t get paid enough to care THAT much, and besides they don’t pay enough. If our bosses weren’t such cheapskates we could have upgraded our servos to the latest version of encryption. I’m sure one of the inmates clicked on something he shouldn’t have again on the holosphere and infected way beyond their limited recreational access. This will no doubt take me all of this month to rewrite and fix!! But the admin hasn’t noticed yet and I’m going to play dumb until he does… more work for me if not. I’m going to have the inmates flogged one by one until they tell me who did this. I’m such a nice guy, why do they put me in these terrible situations? I swear if this malware delays the shipments of food and water for the inmates I will never hear the end of it. My troubles never cease…</p>
             `);
+            break;
+
+            case 'test':
+            if (isPasswordEntered) {
+            appendOutput("<p>Please input passcode (do not use spaces):</p>");
+            } else {
+            appendOutput("<p>Access denied. Please enter the correct password to unlock this segment.</p>");
+            }
             break;
         
     }
