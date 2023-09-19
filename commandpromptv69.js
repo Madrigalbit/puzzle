@@ -431,7 +431,7 @@ function handleCommand(command) {
             appendOutput("<p>Access denied. Please enter the correct password to unlock this segment.</p>");
             }
             break;
-        
+        }
     }
 }
 
