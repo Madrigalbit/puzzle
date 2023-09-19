@@ -7,8 +7,8 @@ let listenCommandCount = 0;
 const unlockPassword = "thedayirest";
 const secretPassword = "CODEBREAKER01101100";
 const commandConfig = {
-    'progs admin_dir/segment_two': 'unlockPassword',
-    'progs admin_dir/segment_three': 'secretPassword',// Requires the admin password
+    'progs admin_dir/segment_two': unlockPassword,
+    'progs admin_dir/segment_three': secretPassword,
 };
 const randomMessages = [
     "A challenge lies ahead, but your determination will lead you to victory.",
