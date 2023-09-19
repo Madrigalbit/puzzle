@@ -1,5 +1,7 @@
 const commandInput = document.getElementById('command-input');
 const output = document.querySelector('.output');
+let isPasswordEntered = false; // Initialize the password check variable
+
 const unlockPassword = "thedayirest";
 const commandConfig = {
     'progs admin_dir/segment_two': true,  // Requires a password
@@ -178,6 +180,11 @@ function handleCommand(command) {
                 }
                 break;
             
+            case 'thedayirest': // Replace "yourpassword" with the actual password
+                isPasswordEntered = true; // Set the password as entered
+                appendOutput("<p>Password accepted. You can now access password-protected commands.</p>");
+                break;
+
             
       // List of "info" commands within the command prompt 
             
