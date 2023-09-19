@@ -1,7 +1,9 @@
 const commandInput = document.getElementById('command-input');
 const output = document.querySelector('.output');
 const unlockPassword = "thedayirest";
-let isPasswordEntered = false;
+const commandConfig = {
+    'progs admin_dir/segment_two': true,  // Requires a password
+};
 
 // Function to display a welcome message
 function displayWelcomeMessage() {
@@ -41,14 +43,11 @@ playButton.addEventListener('click', playAudio); // Attach a click event listene
 
 
 function handleCommand(command) {
-    if (!isPasswordEntered) {
-        // Check if the entered command is the password
-        if (command === unlockPassword) {
-            appendOutput("<p>Password accepted. Access granted.</p>");
-            isPasswordEntered = true;
-        } else {
-            appendOutput("<p>Access denied. Please enter the correct password to unlock commands.</p>");
-        }
+    // Check if the entered command requires a password
+    const requiresPassword = commandConfig[command.toLowerCase()];
+
+    if (requiresPassword && !isPasswordEntered) {
+        appendOutput("<p>Access denied. Please enter the correct password to unlock this command.</p>");
     } else {
     switch (command.toLowerCase()) {
             
