@@ -6,6 +6,13 @@ const unlockPassword = "thedayirest";
 const commandConfig = {
     'progs admin_dir/segment_two': true,  // Requires a password
 };
+const fortune = [
+    "This is a random message 1.",
+    "Here's a completely random message.",
+    "Random message number 3!",
+    "You've unlocked a random message!",
+    // Add more random messages as needed
+];
 
 // Function to display a welcome message
 function displayWelcomeMessage() {
@@ -74,12 +81,13 @@ function handleCommand(command) {
             `);
             break;
 
-             case 'warning':
+            case 'warning':
             appendOutput(`
                 <br />
                 <p>Annihilators have friends in dark places, but so does Dogelon - M</p>
             `);
             break;
+
       // List of "progs" commands within the command prompt
             
             case 'progs':
@@ -174,16 +182,40 @@ function handleCommand(command) {
             
             case 'progs admin_dir/segment_two':
              if (!isPasswordEntered) {
-                    appendOutput("<p>Access denied. Please enter the correct password to unlock this command.</p>");
+                    appendOutput("<p>Access denied. Please enter the correct password to view segment.</p>");
                 } else {
-                    appendOutput("<p>Accessing admin directory...</p>");
+                    appendOutput(`
+                    <br />
+                    <p>Accessing…</p>
+                    <br />
+                    <p>Accessing…</p>
+                    <br />
+                    <p>Permission Granted.</p>
+                    <br />
+                    <p>Accessible new commands:</p>
+                    <br />
+                    <ul>
+                    <li>wanted_posters</li>
+                    <li>incident_reports</li>
+                    <li>maintenance_req</li>
+                    <li>fortune</li>
+                    <li>letters</li>
+                    </ul>
+                    <br />
+                    `);
                 }
                 break;
             
             case 'thedayirest': // Replace "yourpassword" with the actual password
                 isPasswordEntered = true; // Set the password as entered
-                appendOutput("<p>Password accepted. You can now access password-protected commands.</p>");
+                appendOutput("<p>Password accepted. You can now access segment_two...</p>");
                 break;
+
+            case 'progs fortune':
+            const randomIndex = Math.floor(Math.random() * fortune.length);
+            const fortune = fortune[randomIndex];
+            appendOutput(`<p>${fortune}</p>`);
+            break;
 
             
       // List of "info" commands within the command prompt 
@@ -410,6 +442,136 @@ function handleCommand(command) {
                 <p>Entry 5 Stardate 09.19.2552:</p>
                 <br />
                 <p>Something weird is happening with the onboard AI. Can’t seem to really figure it out but I can’t be bothered to care. I don’t get paid enough to care THAT much, and besides they don’t pay enough. If our bosses weren’t such cheapskates we could have upgraded our servos to the latest version of encryption. I’m sure one of the inmates clicked on something he shouldn’t have again on the holosphere and infected way beyond their limited recreational access. This will no doubt take me all of this month to rewrite and fix!! But the admin hasn’t noticed yet and I’m going to play dumb until he does… more work for me if not. I’m going to have the inmates flogged one by one until they tell me who did this. I’m such a nice guy, why do they put me in these terrible situations? I swear if this malware delays the shipments of food and water for the inmates I will never hear the end of it. My troubles never cease…</p>
+            `);
+            break;
+
+            case 'info wanted_posters':
+            appendOutput(`
+                <br />
+                <p>Show Active Wanted Posters.</p>
+                <p>Example: “info wanted_posters/zog”.</p>
+                <br />
+                <ul>
+                    <li>zog</li>
+                    <li>glitterbeard</li>
+                    <li>blip</li>
+                    <li>quarko</li>
+                    <li>letharia</li>
+                    <li>dr_quasar</li>
+                </ul>
+                <br />
+            `);
+            break;
+
+            case 'info wanted_posters/zog':
+            appendOutput(`
+                <br />
+                <p>WANTED: Zog</p>
+                <br />
+                <p>Description:</p>
+                <br />
+                <p>Zog is a six-eyed, tentacled troublemaker with a penchant for stealing cosmic donuts. Known for his neon green skin and a laugh that can shatter planets, Zog has evaded capture by interstellar law enforcement for years.</p>
+                <br />
+                <p>Wanted For:</p>
+                <br />
+                <p>Grand theft pastry, unauthorized planet painting (he turned a gas giant into a giant smiley face), and disturbing the peace with his cosmic comedy open mic nights.</p>
+                <br />
+            `);
+            break;
+
+            case 'info wanted_posters/glitterbeard':
+            appendOutput(`
+                <br />
+                <p>WANTED: Glitterbeard the Galactic Pirate</p>
+                <br />
+                <p>Description:</p>
+                <br />
+                <p>Glitterbeard is a flamboyant pirate with a beard that sparkles like a disco ball. He travels the galaxy in his bedazzled spaceship, plundering space treasure and throwing the wildest space raves.</p>
+                <br />
+                <p>Wanted For:</p>
+                <br />
+                <p>Space piracy, interstellar looting, and excessive use of glitter in a no-glitter zone.</p>
+                <br />
+            `);
+            break;
+
+            case 'info wanted_posters/blip':
+            appendOutput(`
+                <br />
+                <p>WANTED: Blip</p>
+                <br />
+                <p>Description:</p>
+                <br />
+                <p>Blip is a shape-shifting blob of goo that has been going around stealing the brains of unsuspecting beings to gain their knowledge. He has a penchant for turning into famous scientists at intergalactic conferences.</p>
+                <br />
+                <p>Wanted For:</p>
+                <br />
+                <p>Brain theft, identity theft, and creating chaos at scientific symposiums.</p>
+                <br />
+            `);
+            break;
+
+            case 'info wanted_posters/quarko':
+            appendOutput(`
+                <br />
+                <p>WANTED: Captain Quarko</p>
+                <br />
+                <p>Description:</p>
+                <br />
+                <p>Captain Quarko is a space cowboy with a penchant for riding comets and lassoing asteroids. He's known for his flamboyant outfits and over-the-top space rodeos.</p>
+                <br />
+                <p>Wanted For:</p>
+                <br />
+                <p>Unauthorized asteroid wrangling, reckless comet riding, and disturbing the peace with loud cosmic yeehaws.</p>
+                <br />
+            `);
+            break;
+
+            case 'info wanted_posters/letharia':
+            appendOutput(`
+                <br />
+                <p>WANTED: Lady Letharia</p>
+                <br />
+                <p>Description:</p>
+                <br />
+                <p>Lady Letharia is a sassy, venomous lizard-like alien who uses her charm and deadly toxins to outwit her enemies. She's often seen lounging on her throne made of stolen starship parts.</p>
+                <br />
+                <p>Wanted For:</p>
+                <br />
+                <p>Grand theft starship parts, regicide on six planets, and fashion crimes against the Intergalactic Fashion Police.</p>
+                <br />
+            `);
+            break;
+
+            case 'info wanted_posters/dr_quasar':
+            appendOutput(`
+                <br />
+                <p>WANTED: Dr. Quasar</p>
+                <br />
+                <p>Description:</p>
+                <br />
+                <p>Dr. Quasar is a mad scientist whose experiments involve turning cosmic phenomena into household appliances. He's known for creating black hole vacuum cleaners and supernova toasters.</p>
+                <br />
+                <p>Wanted For:</p>
+                <br />
+                <p>Unauthorized cosmic tinkering, reckless appliance creation, and disturbing the cosmic balance with his reckless experiments.</p>
+                <br />
+            `);
+            break;
+
+            case 'info wanted_posters/dogelon':
+            appendOutput(`
+                <br />
+                <p>WANTED: Dogelon</p>
+                <br />
+                <p>Description:</p>
+                <br />
+                <p>...</p>
+                <br />
+                <p>Wanted For:</p>
+                <br />
+                <p>...</p>
+                <br />
             `);
             break;
 
