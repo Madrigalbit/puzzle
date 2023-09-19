@@ -171,10 +171,7 @@ function handleCommand(command) {
             break;
             
             case 'progs admin_dir/segment_two':
-            if (isPasswordEntered) {
-            appendOutput(`<p>Here is a list of commands you have unlocked...</p>`);
-            } else {
-            appendOutput(`<p>Access denied. Please enter the correct password to unlock this segment.</p>`);
+            appendOutput(`<p>we got it to work!</p>`);
             }
             break;
             
