@@ -224,7 +224,7 @@ function handleCommand(command) {
                 break;
 
             case 'progs admin_dir/segment_three':
-             if (!isPasswordEntered) {
+             if (!isSecretPasswordEntered) {
                     appendOutput("<p>Access denied. Please enter the correct password to view segment.</p>");
                 } else {
                     appendOutput(`
@@ -254,7 +254,7 @@ function handleCommand(command) {
                 break;
 
             case 'CODEBREAKER01101100': // Replace "yourpassword" with the actual password
-                isPasswordEntered = true; // Set the password as entered
+                isSecretPasswordEntered = true; // Set the password as entered
                 appendOutput("<br /><p>Password accepted. You can now access segment_three...</p>");
                 break;
 
