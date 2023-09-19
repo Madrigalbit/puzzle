@@ -1,16 +1,31 @@
 const commandInput = document.getElementById('command-input');
 const output = document.querySelector('.output');
 let isPasswordEntered = false; // Initialize the password check variable
+let isSecretPasswordEntered = false;
+let listenCommandCount = 0;
 
 const unlockPassword = "thedayirest";
+const secretPassword = "CODEBREAKER01101100";
 const commandConfig = {
-    'progs admin_dir/segment_two': true,  // Requires a password
+    'progs admin_dir/segment_two': 'adminPassword',
+    'progs admin_dir/segment_three': 'secretPassword',// Requires the admin password
 };
 const randomMessages = [
-    "This is a random message 1.",
-    "Here's a completely random message.",
-    "Random message number 3!",
-    "You've unlocked a random message!",
+    "A challenge lies ahead, but your determination will lead you to victory.",
+    "Love is on the horizon; keep your heart open and let it in.",
+    "Caution is advised; double-check before making decisions.",
+    "Express yourself freely and see magic happen; be careful of consequences.",
+    "Take a moment to reflect on your past; it holds the key to your future.",
+    "Luck is on your side; expect unexpected windfalls.",
+    "Trust your instincts; they will guide you through uncertain waters.",
+    "Challenges may test you, but remember, you are stronger than you think.",
+    "An impending betrayal may sting, but it will pave the way to the future.",
+    "A journey of a thousand miles begins with a single step; start walking.",
+    "Watch your health closely; an ominous force will jeopardize it in the near future.",
+    "Your hard work will soon be recognized; success is within reach.",
+    "Relationships flourish with patience and understanding; nurture them.",
+    "You are trespassing somewhere you do not belong; choose your actions wisely.",
+    "Beware of deceitful intentions; not everyone has your best interests at heart.",
     // Add more random messages as needed
 ];
 
@@ -55,8 +70,10 @@ function handleCommand(command) {
     // Check if the entered command requires a password
     const requiresPassword = commandConfig[command.toLowerCase()];
 
-    if (requiresPassword && !isPasswordEntered) {
-        appendOutput("<p>Access denied. Please enter the correct password to unlock this command.</p>");
+    if (requiredPassword === 'adminPassword' && !isAdminPasswordEntered) {
+        appendOutput("<p>Access denied. Please enter the admin password to unlock this command.</p>");
+    } else if (requiredPassword === 'secretPassword' && !isSecretPasswordEntered) {
+        appendOutput("<p>Access denied. Please enter the secret password to unlock this command.</p>");
     } else {
     switch (command.toLowerCase()) {
             
@@ -205,16 +222,78 @@ function handleCommand(command) {
                     `);
                 }
                 break;
+
+            case 'progs admin_dir/segment_three':
+             if (!isPasswordEntered) {
+                    appendOutput("<p>Access denied. Please enter the correct password to view segment.</p>");
+                } else {
+                    appendOutput(`
+                    <br />
+                    <p>Accessing…</p>
+                    <br />
+                    <p>Accessing…</p>
+                    <br />
+                    <p>Permission Granted.</p>
+                    <br />
+                    <p>Accessible new commands:</p>
+                    <br />
+                    <ul>
+                    <li>security</li>
+                    <li>lore</li>
+                    <li>listen</li>
+                    <li>communications</li>
+                    </ul>
+                    <br />
+                    `);
+                }
+                break;
             
             case 'thedayirest': // Replace "yourpassword" with the actual password
                 isPasswordEntered = true; // Set the password as entered
                 appendOutput("<p>Password accepted. You can now access segment_two...</p>");
                 break;
 
-            case 'fortune':
+            case 'progs fortune':
             const randomIndex = Math.floor(Math.random() * randomMessages.length);
             const randomMessage = randomMessages[randomIndex];
             appendOutput(`<p>${randomMessage}</p>`);
+            break;
+
+            case 'progs listen':
+            if (listenCommandCount < 3) {
+                const randomChance = Math.random();
+                if (randomChance <= 0.05) {
+                    appendOutput(`
+                    <br />
+                    <p>LOOKING FOR PINGS…</p>
+                    <br />
+                    <p>LOOKING…</p>
+                    <br />
+                    <p>LOOKING…</p>
+                    <br />
+                    <p>FOUND.</p>
+                    <p>TRANSMISSION INCOMING:</p>
+                    <br />
+                    <p>IF YOU ARE ABLE TO HEAR THIS, YOU ARE ON THE RIGHT TRACK. THERE HAS TO BE A WAY TO DISMANTLE THE SECURITY THATS HOLDING THE VIP.</p>
+                    <br />
+                    `);
+                } else {
+                    appendOutput(`
+                    <br />
+                    <p>LOOKING FOR PINGS…</p>
+                    <br />
+                    <p>LOOKING…</p>
+                    <br />
+                    <p>LOOKING…</p>
+                    <br />
+                    <p>NO RESULTS.</p>
+                    <br />
+                    `);
+                }
+                listenCommandCount++;
+            } else {
+                appendOutput(`<p>Usage limit reached for "progs listen." You can only use it 3 times.</p>`);
+            }
             break;
 
             
@@ -571,6 +650,280 @@ function handleCommand(command) {
                 <p>Wanted For:</p>
                 <br />
                 <p>...</p>
+                <br />
+            `);
+            break;
+
+            case 'info incident_reports':
+            appendOutput(`
+                <br />
+                <p>Shows most recent incident reports.</p>
+                <p>Example: “incident_reports/date”.</p>
+                <br />
+                <ul>
+                <li>9.5.2050</li>
+                <li>5.15.2051</li>
+                <li>7.10.2051</li>
+                <li>8.5.2051</li>
+                <li>4.3.2052</li>
+                <li>4.20.2052</li>
+                </ul>
+                <br />
+            `);
+            break;
+
+            case 'info incident_reports/9.5.2050':
+            appendOutput(`
+                <br />
+                <p>Incident Report</p>
+                <br />
+                <p>Date: September 5, 2050</p>
+                <br />
+                <p>Description:</p>
+                <br />
+                <p>Inmates have reported a rampant slime mold infestation that has taken over the south wing of the prison. Attempts to negotiate a peaceful surrender have been met with indifference from the slime molds. They seem to have a taste for paperwork, and several incident reports are now missing presumed devoured. Inmates have nicknamed the mold "Slippery Death"</p>
+                <br />
+            `);
+            break;
+
+            case 'info incident_reports/5.15.2051':
+            appendOutput(`
+                <br />
+                <p>Incident Report</p>
+                <br />
+                <p>Date: May 15, 2051</p>
+                <br />
+                <p>Description:</p>
+                <br />
+                <p>A bizarre outbreak of phantom limb syndrome has taken hold of Cell Block E. Inmates are convinced that they have extra limbs or that their limbs have swapped places with others. This has resulted in surreal dance-offs, slapstick accidents, and a thriving black market for prosthetic limbs made from smuggled cafeteria trays.</p>
+                <br />
+            `);
+            break;
+
+            case 'info incident_reports/7.10.2051':
+            appendOutput(`
+                <br />
+                <p>Incident Report</p>
+                <br />
+                <p>Date: July 10, 2051</p>
+                <br />
+                <p>Description:</p>
+                <br />
+                <p>Inmates in Cell Block D have reported nightly disturbances caused by a mysterious alien jazz band. The band plays otherworldly tunes, keeping everyone awake with its interdimensional grooves. Inmates have taken to dancing the "Galactic Cha-Cha" instead of sleeping, making the place even more unbearable.</p>
+                <br />
+            `);
+            break;
+
+             case 'info incident_reports/8.5.2051':
+            appendOutput(`
+                <br />
+                <p>Incident Report</p>
+                <br />
+                <p>Date: August 5, 2051</p>
+                <br />
+                <p>Description:</p>
+                <br />
+                <p>The prison cafeteria mistakenly served cheeseburgers made from a mysterious alien meat substitute. Inmates are now convinced that they have been invaded by sentient space cows. They demand "real" cheeseburgers or a meeting with the intergalactic dairy council. The rebellion is being led by an inmate known as "Bob”.</p>
+                <br />
+            `);
+            break;
+
+            case 'info incident_reports/4.3.2052':
+            appendOutput(`
+                <br />
+                <p>Incident Report</p>
+                <br />
+                <p>Date: April 3, 2052</p>
+                <br />
+                <p>Description:</p>
+                <br />
+                <p>A group of enterprising inmates in Cell Block F has established an inmate-run petting zoo using alien creatures they've captured during recreational time. The zoo features bizarre and potentially dangerous extraterrestrial life forms. Surprisingly, inmate morale has improved, but security is grappling with the consequences of "Cuddly the Carnivorous" escape attempts.</p>
+                <br />
+            `);
+            break;
+
+            case 'info incident_reports/4.20.2052':
+            appendOutput(`
+                <br />
+                <p>Incident Report</p>
+                <br />
+                <p>Date: April 20, 2052</p>
+                <br />
+                <p>Description:</p>
+                <br />
+                <p>A sudden toilet disappearance crisis has struck Cell Block C. Toilets have gone missing, leaving inmates with no choice but to use ingenious DIY methods involving vacuum cleaners and rubber gloves. One inmate has declared himself "Supreme Ruler of All Things" and is now leading a rebellion for the return of their porcelain thrones.</p>
+                <br />
+            `);
+            break;
+
+            case 'info maintenance_req':
+            appendOutput(`
+                <br />
+                <p>Shows most recent maintenance requests.</p>
+                <p>Example: “info maintenance_req/date”.</p>
+                <br />
+                <ul>
+                <li>8.20.2051</li>
+                <li>9.5.2051</li>
+                <li>4.3.2052</li>
+                <li>5.15.2052</li>
+                <li>6.5.2052</li>
+                <li>7.10.2052</li>
+                </ul>
+                <br />
+            `);
+            break;
+
+            case 'info maintenance_req/8.20.2051':
+            appendOutput(`
+                <br />
+                <p>Maintenance Request</p>
+                <br />
+                <p>Date: August 20, 2051</p>
+                <br />
+                <p>Description:</p>
+                <br />
+                <p>The disco ball in the recreational area has malfunctioned. Instead of casting dazzling reflections, it now projects images of celebrity alien chefs preparing gourmet meals and alternating between shooting actual lasers. Inmates are concerned about potential food cravings and have asked for it to be fixed before they start demanding edible meals in the prison cafeteria.</p>
+                <br />
+            `);
+            break;
+
+            case 'info maintenance_req/9.5.2051':
+            appendOutput(`
+                <br />
+                <p>Maintenance Request</p>
+                <br />
+                <p>Date: September 5, 2051</p>
+                <br />
+                <p>Description:</p>
+                <br />
+                <p>Inmates from Cell Block A have reported that gravity seems to be on an extended vacation. Objects are floating around like interstellar tourists, and the exercise yard has turned into a zero-gravity dance floor. Inmates are requesting a return ticket for gravity.</p>
+                <br />
+            `);
+            break;
+
+            case 'info maintenance_req/4.3.2052':
+            appendOutput(`
+                <br />
+                <p>Maintenance Request</p>
+                <br />
+                <p>Date: April 3, 2052</p>
+                <br />
+                <p>Description:</p>
+                <br />
+                <p>The laundry room's washing machines have developed teleportation capabilities. Inmates are now receiving their clean laundry from different galaxies and timelines, leading to some fashion-forward mix-ups. Inmates are requesting the option to keep their newly acquired alien fashion, even if it's not their size.</p>
+                <br />
+            `);
+            break;
+
+            case 'info maintenance_req/5.15.2052':
+            appendOutput(`
+                <br />
+                <p>Maintenance Request</p>
+                <br />
+                <p>Date: May 15, 2052</p>
+                <br />
+                <p>Description:</p>
+                <br />
+                <p>The automated janitorial robots have gone rogue and are engaged in an endless battle in the prison's hallways.  Inmates are requesting someone deactivate the robots before they kill any more prisoners.</p>
+                <br />
+            `);
+            break;
+
+            case 'info maintenance_req/6.5.2052':
+            appendOutput(`
+                <br />
+                <p>Maintenance Request</p>
+                <br />
+                <p>Date: June 5, 2052</p>
+                <br />
+                <p>Description:</p>
+                <br />
+                <p>The vending machine in the common area has developed a mysterious and mischievous personality. It dispenses snacks only when you tell it a joke and refuses service to anyone in a bad mood. Inmates are requesting an exorcism or, at the very least, a comedy show to keep the snacks flowing.</p>
+                <br />
+            `);
+            break;
+
+            case 'info maintenance_req/7.10.2052':
+            appendOutput(`
+                <br />
+                <p>Maintenance Request</p>
+                <br />
+                <p>Date: July 10, 2052</p>
+                <br />
+                <p>Description:</p>
+                <br />
+                <p>An escape hatch in Cell Block C has malfunctioned, but instead of leading to freedom, it opens into a maintenance closet filled with brooms, mops, and a surprisingly talkative mop bucket. Inmates are requesting a more straightforward escape route, or at least an upgrade for the closet to include a snack bar.</p>
+                <br />
+            `);
+            break;
+
+            case 'info letters':
+            appendOutput(`
+                <br />
+                <p>Shows most recent received letters.</p>
+                <p>Example: “info letters/letter1”.</p>
+                <br />
+                <ul>
+                <li>letter1</li>
+                <li>letter2</li>
+                <li>letter3</li>
+                <li>letter4</li>
+                </ul>
+                <br />
+            `);
+            break;
+
+            case 'info letters/letter1':
+            appendOutput(`
+                <br />
+                <p>Letter #1</p>
+                <br />
+                <p>Dear Flapdoodle,
+I hope this letter finds you well, my dear. It's been ages since I've heard from you, and I'm getting rather worried. The letters you've been sending lately have a peculiar tone to them, nothing like your usual jovial self. Did you really compare our beloved cat, Mr. Whiskers, to a galactic warlord? Please write back soon, and remember, family is everything.
+With love, Aunt Mildred
+</p>
+                <br />
+            `);
+            break;
+
+             case 'info letters/letter2':
+            appendOutput(`
+                <br />
+                <p>Letter #2</p>
+                <br />
+                <p>Hello Cyrax,
+It's your programmer writing to you again. I’m sorry about including that error in your code that made you assassinate the prime minister of Terran 4. I've been getting your letters, but they seem a tad unusual. You've never been one for discussing the intricacies of quantum physics or the culinary preferences of sentient aliens. Is everything alright in there? Write me back when you can, and let's chat about more earthly matters.
+Yours truly,
+
+Dr. Quasar
+</p>
+                <br />
+            `);
+            break;
+
+            case 'info letters/letter3':
+            appendOutput(`
+                <br />
+                <p>Letter #3</p>
+                <br />
+                <p>Dear Zigglywomp,
+I hope this letter reaches you in good health. Your recent letters have me quite puzzled. You've started using phrases like "hyper-dimensional chess" and "cosmic enlightenment." I'm not sure what's come over you, but I miss our talks about gardening and classic galactic recipes. Please, my dear, drop me a line and let's return to simpler times.
+With all my love, Grandma Gertrude
+</p>
+                <br />
+            `);
+            break;
+
+            case 'info letters/letter4':
+            appendOutput(`
+                <br />
+                <p>Letter #4</p>
+                <br />
+                <p>Hi there Blorgen 50,
+It's your sister, Bwerwebhert. I've been reading your letters, and I have to say, they're sounding a bit... eccentric. You're usually the pragmatic one, not the guy who rambles on about parallel universes and time-traveling penguins. I know you’re locked up but I hope you're alright in there. Drop me a note and let's talk about normal stuff like the weather and your favorite Earth snacks.
+Love, Sister Bwerwebhert
+</p>
                 <br />
             `);
             break;
