@@ -68,7 +68,7 @@ playButton.addEventListener('click', playAudio); // Attach a click event listene
 
 function handleCommand(command) {
     // Check if the entered command requires a password
-    const requiresPassword = commandConfig[command.toLowerCase()];
+    const requiredPassword = commandConfig[command.toLowerCase()];
 
     if (requiredPassword === 'adminPassword' && !isAdminPasswordEntered) {
         appendOutput("<p>Access denied. Please enter the admin password to unlock this command.</p>");
