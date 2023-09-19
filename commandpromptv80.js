@@ -7,7 +7,7 @@ let listenCommandCount = 0;
 const unlockPassword = "thedayirest";
 const secretPassword = "CODEBREAKER01101100";
 const commandConfig = {
-    'progs admin_dir/segment_two': 'adminPassword',
+    'progs admin_dir/segment_two': 'unlockPassword',
     'progs admin_dir/segment_three': 'secretPassword',// Requires the admin password
 };
 const randomMessages = [
