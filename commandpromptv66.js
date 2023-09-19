@@ -417,8 +417,36 @@ function handleCommand(command) {
             `);
             break;
 
+             case 'command2':
+            // Check if a password is required and prompt the user for it
+            if (passwordRequired('command2')) {
+                appendOutput('Password required for this command.');
+            } else {
+                appendOutput('Command 2 executed.');
+            }
+            break;
+
         
     }
+}
+
+// Function to check if a password is required for a command
+function passwordRequired(command) {
+    // Define the commands that require passwords and their associated passwords
+    const passwordProtectedCommands = {
+        'command2': 'password2',
+        'command3': 'password3',
+    };
+
+    // Check if the command is in the password-protected list
+    if (passwordProtectedCommands.hasOwnProperty(command)) {
+        const requiredPassword = passwordProtectedCommands[command];
+        const enteredPassword = prompt(`Enter password for ${command}:`);
+        return enteredPassword !== requiredPassword;
+    }
+
+    // Return false if the command is not password-protected
+    return false;
 }
 
 function appendOutput(content) {
