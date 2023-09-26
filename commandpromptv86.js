@@ -95,6 +95,7 @@ function handleCommand(command) {
                 </ul>
                 <br />
                 <p>To get started, simply type your desired command and follow the prompts. Keep your limbs and tentacles inside the terminal at all times, and don't access any programs that you don't have clearance to.</p>
+                <br />
             `);
             break;
 
@@ -102,6 +103,27 @@ function handleCommand(command) {
             appendOutput(`
                 <br />
                 <p>Annihilators have friends in dark places, but so does Dogelon - M</p>
+                <br />
+            `);
+            break;
+
+                 case 'moon':
+            appendOutput(`
+                <br />
+                <p>YOU DREAM OF VISAGES OF GOING TO THE MOON, WANTING FOR NOTHING.</p>
+                <br />
+                <p>https://puzzle-site.webflow.io/moon</p>
+                <br />
+            `);
+            break;
+
+                case 'rocket':
+            appendOutput(`
+                <br />
+                <p>YOU DREAM OF VISAGES OF GOING TO THE MOON, WANTING FOR NOTHING.</p>
+                <br />
+                <p>https://puzzle-site.webflow.io/moon</p>
+                <br />
             `);
             break;
 
@@ -118,7 +140,8 @@ function handleCommand(command) {
                     <li>admin_dir: Access different directorys(PASSWORD-PROTECTED)</li>
                 </ul>
                 <br />
-                <p>To target specific Information, please follow this format - Example: 'progs target'</p>      
+                <p>To target specific Information, please follow this format - Example: 'progs target'</p>   
+                <br />
             `);
             break;
 
@@ -136,6 +159,49 @@ function handleCommand(command) {
                 </ul>
                 <br />
                 <p>To target specific Information, please follow this format - Example: 'progs access/target'</p>      
+            `);
+            break;
+
+                case 'progs access/mess_hall':
+            appendOutput(`
+                <br />
+                <p>The terminal screen transforms into a live feed from the security cameras stationed within the Galactic Prison's cafeteria. Trays are lined up in hi-tech conveyor belt, each heaped with globs of unidentifiable substances. Inmates approach with expressions of resignation, using their assorted appendages to manipulate the unappetizing mounds. The scene resembles a bizarre extraterrestrial food excavation, as prisoners sift through the unappetizing heaps, expressions bordering on reluctant determination. Nothing more catches your eye.</p>
+                <br />   
+            `);
+            break;
+
+                case 'progs access/rec_room':
+            appendOutput(`
+                <br />
+                <p>The terminal interface morphs into a live visual feed from the security cameras stationed within the Galactic Prison's Rec Room. A frenetic game of Zogball is in full swing. Inmates resembling a mash-up of assorted species bounce an odd shaped ball between them, using an assortment of appendages to keep it airborne. The rules appear to be more improvisational than structured, resulting in a chaotic blend of competition and camaraderie. The ball ricochets off tentacles, wings, and tendrils, creating a chaotic spectacle that's equal parts sport and slapstick. It is clear this is one of the few things that keeps morale high here. Nothing else catches your attention.</p>
+                <br />   
+            `);
+            break;
+
+                case 'progs access/cells':
+            appendOutput(`
+                <br />
+                <p>The terminal interface transforms into a live feed from the security cameras stationed within the sprawling expanse of the facility’s cells. You're granted a voyeuristic window into the diverse lives, emotions, and activities of the inmates within their confined spaces. Rows of cells extend into the distance, each housing an inmate - sometimes two. The architecture of these enclosures is uniform and resembles almost bioengineered cocoon-like chambers. Inmates within are engaged in a spectrum of activities – some read ancient tomes with extra appendages, others create peculiar works of art using unconventional materials, and some communicate via an intricate network of bioluminescent signals. Nothing else catches your attention.</p>
+                <br />   
+            `);
+            break;
+
+                case 'progs access/vaults':
+            appendOutput(`
+                <br />
+                <p>The terminal interface transforms into a live feed from the security cameras positioned within the labyrinthine vaults of the facility. You become privy to a seemingly empty space that carries an air of concealed significance. Fortified locked boxes  line the walls. Each compartment is carefully labeled with an inmate identification code, suggesting a repository for personal effects. The room appears empty and there's an underlying sense that these unremarkable compartments hold stories, histories, and fragments of lives that intertwine within the prison's cosmic tapestry. There is nothing more to do here now.</p>
+                <br />   
+            `);
+            break;
+
+                      case 'progs access/vip':
+            appendOutput(`
+                <br />
+                <p>The terminal interface transforms into a live visual feed from the security camera stationed within a highly secure and isolated cell within the facility. Its walls are reinforced with layers of unbreakable materials, and the dim lighting within casts elongated shadows across the minimalist interior. A forcefield protrudes in front of the cell, housing what appears to be a bipedal canine. The stillness carries an air of contemplation and resignation. </p>
+                <br />
+                <br />
+                <p>(ACCESS DENIED)</p>
+                <br />
             `);
             break;
 
@@ -241,7 +307,6 @@ function handleCommand(command) {
                     <li>security</li>
                     <li>lore</li>
                     <li>listen</li>
-                    <li>communications</li>
                     </ul>
                     <br />
                     `);
@@ -312,10 +377,112 @@ function handleCommand(command) {
                 <ul>
                     <li>staff: View staff information.</li>
                     <li>schedule: View schedule information.</li>
+                    <li>entries: View user based entry logs.</li>
                     <li>monthly_entries: View monthly logs.</li>
                 </ul>
                 <br />
                 <p>To target specific Information, please follow this format - Example: 'info target'</p>      
+            `);
+            break;
+
+                case 'info entries':
+            appendOutput(`
+                <br />
+                <p>Access written entries. Example: 'info entries/target'</p>
+                <br />
+                <ul>
+                    <li>entry_1</li>
+                    <li>entry_2</li>
+                    <li>entry_3</li>
+                    <li>entry_4</li>
+                </ul>
+                <br />     
+            `);
+            break;
+
+                case 'info entries/entry_1':
+            appendOutput(`
+                <br />
+                <p>Date: [Unknown]</p>
+                <br />
+                <p>It's been a week since I took up the position as the IT administrator here at this  facility. Can't believe I ended up dealing with interstellar wires and alien firewalls when all of this tech has to be lightyears old. The endless corridors, the strange sounds – it's like living in a mad scientist's version of a prison. I'm just here for the credits, but the monotony is maddening. I might as well be debugging the cosmos, they’ve hidden so many layers of weird… code here it boggles the mind. None of this makes sense, and its almost contradictory in how its been laid out. I have no idea who programmed this but that’s an awful omen to have at the beginning of my job here. Its like no one really cares what’s going on here, the rest of the galaxy just puts galactic criminals here and shut the door and forget about them. Moralities aside, I guess it’s not so bad. It’ll give me something to ticker with to pass the days I suppose. Maybe one day, I'll find something more exciting than a malfunctioning food dispenser.</p>
+                <br />     
+            `);
+            break;
+
+                case 'info entries/entry_2':
+            appendOutput(`
+                <br />
+                <p>Date: [Unknown]</p>
+                <br />
+                <p>Stumbled upon some strange texts today while sorting through the ancient archives. Cryptic symbols, eerie diagrams – they're unlike anything I've ever seen. Could be some alien language, but there's a foreboding undertone to it all. I reported it to the admin and the janitor here but they both dismissed it as cosmic graffiti. I don’t know, some of this is really ancient code but I can’t seem to really decipher it. All in all I can't shake off the unease. There's something they're hiding beneath the surface, something more than this place's already morally questionable chaos. Well, if they don’t seem to care maybe I’ve found a puzzle here to tinker with to keep my mind busy. Who knows, I may learn something interesting.</p>
+                <br />     
+            `);
+            break;
+
+                case 'info entries/entry_3':
+            appendOutput(`
+                <br />
+                <p>Date: [Unknown]</p>
+                <br />
+                <p>My suspicions were right. I've decoded enough of those texts to uncover the horror that this place harbors. I can’t even believe I’m writing this but not only are the conditions here terrible they're actually sacrificing the inmates here. Intentionally killing them to offer them to some twisted machine deity. The reports mention "divine energy transfer," but it's a euphemism for the gruesome reality. The prisoners are nothing more than fuel for this sinister cosmic engine - and maybe that’s why the conditions here are so bad. My hands are trembling as I write this. I can't fathom the depths of this malevolence. I can’t be here anymore, I’ve requested a transfer off of this place immediately.</p>
+                <br />     
+            `);
+            break;
+
+                case 'info entries/entry_4':
+            appendOutput(`
+                <br />
+                <p>Date: [Unknown]</p>
+                <br />
+                <p>They've found out. They're coming for me. I don’t think I can get out of this. Just in case I'm leaving these entries here, hoping someone might piece this nightmare together. I've accessed the facility's terminal, unlocked the logs, left breadcrumbs of data for those who dare to uncover the truth - another directory hidden with the password CODEBREAKER01101100. There's a chance, a glimmer of hope. If you're reading this, heed my warning: They're harvesting lives for some monstrous machinery, and I'm next. I have to run, to escape, to expose them. The corridors are alive with their whispers, their chilling voices, urging me to join their diabolical devotion. I won't. They can't silence me. They won't.</p>
+                <br />
+                <p>……………..</p>
+                <br />
+                <p>…….</p>
+                <br />
+                <p>………………..</p>
+                <br />
+                <p>ADDITIONAL ENTRY LOCATED</p>
+                <br />
+                <p>'info entries/entry_00'</p>
+                <br />
+            `);
+            break;
+
+                case 'info entries/entry_00':
+            appendOutput(`
+                <br />
+                <p>@@@@@@@@@@@@@@@@&&&&&&&&&&&&%%%%%%%###########((((########%%%%%%%&&&&&&&&&&&@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@&&&&&&&&&&&&%%%%%%%%#########(((,,,,,((((((########%%%%%%%%&&&&&&&&&&&@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@&&&&&&&&&&&&&%%%%%%%%##%.,,, . ..,.#####%%%%%%%%&&&&&&&&&&&&@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@&&&&&&&&&&&&&&%%%%%%,*. ..,....*.. ., .,,%%%%%%%%&&&&&&&&&&&&@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@&&&&&&&&&&&&&&&%&**/ ,(&%&%%%/,..,,/(/(((/*. .,,*%%%&&&&&&&&&&&&@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@&&&&&&&&&&&&&&&./*,....#**,**,*((,,*,,/(.,,.,,*,.. ,*,%&&&&&&&&&&&&@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@&&&&&&&&&&&&&(#(*..,##.(.#(#/(#%%%*(*(#(((*(*/./.*,. ,,*/&&&&&&&&&&&@@@@@@@@@@@@@@@@
+@@@I@@@@@@@@@@@@&&&&&##&&&(***/,.#./#(#(#/##SEE###(.#((((((//(((/. .****#&&&#&&&@@@@@@YOU@@@@@@@@@@
+@@@@@@@@@@@@@@@@@&&&##&&&%**(*...,,/###%%###%%%&#((,/%##%((##((#/, ,,***//&&&&#@&@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@&&/#&&&&//(/%(,,(/(((#####%#%#%%##(#%%#((#(#(#/*.,/****/(/(&&&&#&@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@(#@&&&#%(##%###/(#(#(##&&##%%%&##,%#####%#(#//. ..(*((((,#(&&&&(&@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@&#&&@&%/#(&###%########/((%%&%&&&%*%&%%#%(//(,(..,/((*##/,#*(&@@%/@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@&#@@@&%(//#&((%%%%%######/%%#%%%#####%%##/#(/// /(((*&**(*,/(#@@@%/@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@##@@@%#%//(%//(##&%#######(%#%##@##(@##(#&#((/.,,*////*,,(/,,(((@@@%*@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@(###@@/%#(((****/#(&%#######/&&%#&%#,&##%&#((//.*/(%/.,....,*/(#*@@##%/@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@%%@%/#&%&@#&(%&&@/(##%#(#####(&%&%###%%%%#(/(/,/(/**,,%&&%*&(@%%&*(%@%(@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@&%#@&&&@&@(##(&@@@@%@(##&######/&&&%%/&&&%#((/*(#/*,&@@@@&&***(@%@&&@@%%@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@&&%##(/,,%#&/&&@@@@.%@(%%####%#/&&%&#&&&##((*##/*&#@@@@@%#,%((. ,/(#&&@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@%&@@&@##///(&@@&&&&%%&(#%###%*&&%%(&&#%##(#(/%%.#%&@@@%*,,./#&&@@&%@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@&/@@&&%&&(///%&&%.*,*/(#%#%#%%&#%%%%%%&##(%(%#(**.,/%%(/.,,*(#%@&@@(&@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@#(@@@@&((///(%#(*,...*(%%&%%%%%&&%&&&%%#%@##/, ..,*##%*,,,*/&@@@@((@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@(/@@@(&@&(//(%#(/(//(((&@&%%%%@&%%@%%(#&&&#/*////(#(,,,*&&%(@@@*(@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@%#%&@&&&%(((%%%%%%%%#@@@@@&&&&&&&%%@@@@&#(%%#%%#(,*/%@&&&%#(%@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@&@%&&@&###%%&&@@@@@@@@%%#%%#,#*@@@@@@@&%#////#@@%&%@&@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@&@@@&@%@#%%%%%%%%%%%%%%@%%(@#(#(((##%%%&%#/@%@&@@@%@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@#&@@@&@@@&@#%@@@&%%%@%#%@%%/&#,#&#%%&@@&(/@&%@@@@@@&/@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@%@@@@@/%&&@@##@@%&#%%%#%%(#(*/(((#(&&(/@&@%//@@@@@/@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+</p>
+                <br />
             `);
             break;
 
