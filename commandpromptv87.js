@@ -127,6 +127,16 @@ function handleCommand(command) {
             `);
             break;
 
+                case 'if you are reading this':
+            appendOutput(`
+                <br />
+                <p>IF YOU ARE READING THIS, THEN MY MESSAGES ARE WORKING.</p>
+                <br />
+                <p>https://puzzle-site.webflow.io/if-you-are-reading-this</p>
+                <br />
+            `);
+            break;
+
       // List of "progs" commands within the command prompt
             
             case 'progs':
