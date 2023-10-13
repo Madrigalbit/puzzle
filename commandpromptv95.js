@@ -116,6 +116,15 @@ function handleCommand(command) {
             break;
 
                 case 'background/one':
+                document.getElementById('terminal').style.backgroundImage = originalBackgroundImage;
+            appendOutput(`
+                <br />
+                <p>You have successfully changed the background.</p>
+                <br />
+            `);
+            break;
+
+                case 'background/two':
                 document.getElementById('terminal').style.backgroundImage = 'url("https://uploads-ssl.webflow.com/64b5a4e0b3eb0b798719403e/65294ccc98babfd4b207d909_youtube-video-gif%20(1).gif")';
             appendOutput(`
                 <br />
