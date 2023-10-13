@@ -106,9 +106,8 @@ function handleCommand(command) {
                 <p>Select a new background:</p>
                 <br />
                 <ul>
-                    <li>One</li>
-                    <li>Two</li>
-                    <li>Three</li>
+                    <li>default</li>
+                    <li>pipes</li>
                 </ul>
                 <br />
                 <p>To get started, simply type your desired command and follow the prompts. Keep your limbs and tentacles inside the terminal at all times, and don't access any programs that you don't have clearance to.</p>
@@ -116,20 +115,20 @@ function handleCommand(command) {
             `);
             break;
 
-                case 'background/one':
-                document.getElementById('terminal').style.backgroundImage = originalBackgroundImage;
+                case 'background/default':
+                document.getElementById('terminal').style.backgroundImage = 'url("https://uploads-ssl.webflow.com/64b5a4e0b3eb0b798719403e/64b60b455f62aa79d01b9eeb_Group%201.png")';
             appendOutput(`
                 <br />
-                <p>You have successfully changed the background.</p>
+                <p>You have successfully changed the background to default.</p>
                 <br />
             `);
             break;
 
-                case 'background/two':
+                case 'background/pipes':
                 document.getElementById('terminal').style.backgroundImage = 'url("https://uploads-ssl.webflow.com/64b5a4e0b3eb0b798719403e/65294ccc98babfd4b207d909_youtube-video-gif%20(1).gif")';
             appendOutput(`
                 <br />
-                <p>You have successfully changed the background.</p>
+                <p>You have successfully changed the background to pipes.</p>
                 <br />
             `);
             break;
