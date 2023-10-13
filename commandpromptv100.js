@@ -125,7 +125,7 @@ function handleCommand(command) {
             break;
 
                 case 'background/pipes':
-                document.getElementById('terminal').style.backgroundImage = 'url("https://uploads-ssl.webflow.com/64b5a4e0b3eb0b798719403e/65295034d354160e500fd49f_youtube-video-gif%20(2).gif")';
+                document.getElementById('terminal').style.backgroundImage = 'url("https://uploads-ssl.webflow.com/64b5a4e0b3eb0b798719403e/652950dcf469d384547d59d1_youtube-video-gif%20(3).gif")';
             appendOutput(`
                 <br />
                 <p>You have successfully changed the background to pipes.</p>
