@@ -224,7 +224,8 @@ function handleCommand(command) {
                     <li>vip</li>
                 </ul>
                 <br />
-                <p>To target specific Information, please follow this format - Example: 'progs access/target'</p>      
+                <p>To target specific Information, please follow this format - Example: 'progs access/target'</p>     
+                <br />
             `);
             break;
 
@@ -285,7 +286,8 @@ function handleCommand(command) {
                     <li>flip</li>
                     <li>examine</li>
                     <li>leave</li>
-                </ul>      
+                </ul>  
+                <br />
             `);
             break;
 
@@ -299,6 +301,7 @@ function handleCommand(command) {
                 <p>……………………..</p>
                 <br />
                 <p>HEADS</p>   
+                <br />
             `);
             break;
 
@@ -306,6 +309,7 @@ function handleCommand(command) {
             appendOutput(`
                 <br />
                 <p>THE OLD COIN IS LITTERED WITH SCRATCHES, INDENTS, AND WORN EDGES - A MONUMENT TO TIME. THE FATE OF MUCH HAS HINGED ON THIS ORDINARY OBJECT.</p>
+                <br />
             `);
             break;
 
@@ -313,6 +317,7 @@ function handleCommand(command) {
             appendOutput(`
                 <br />
                 <p>YOU WALK AWAY FROM THE COIN.</p>
+                <br />
             `);
             break;
 
@@ -326,6 +331,7 @@ function handleCommand(command) {
                     <li>segment_three</li>
                 </ul>
                 <p>To target a specific directory, please follow this format - Example: 'progs admin_dir/segment_two'</p>
+                <br />
             `);
             break;
             
@@ -381,12 +387,12 @@ function handleCommand(command) {
             
             case 'thedayirest': // Replace "yourpassword" with the actual password
                 isPasswordEntered = true; // Set the password as entered
-                appendOutput("<br /><p>Password accepted. You can now access segment_two...</p>");
+                appendOutput("<br /><p>Password accepted. You can now access segment_two...</p><br />");
                 break;
 
             case 'codebreaker':
                 isSecretPasswordEntered = true; // Set the password as entered
-                appendOutput("<br /><p>Password accepted. You can now access segment_three...</p>");
+                appendOutput("<br /><p>Password accepted. You can now access segment_three...</p><br />");
                 break;
 
             case 'progs fortune':
@@ -428,7 +434,7 @@ function handleCommand(command) {
                 }
                 listenCommandCount++;
             } else {
-                appendOutput(`<p>Usage limit reached for "progs listen." You can only use it 3 times.</p>`);
+                appendOutput(`<p>Usage limit reached for "progs listen." You can only use it 3 times.</p><br />`);
             }
             break;
 
@@ -447,7 +453,8 @@ function handleCommand(command) {
                     <li>monthly_entries: View monthly logs.</li>
                 </ul>
                 <br />
-                <p>To target specific Information, please follow this format - Example: 'info target'</p>      
+                <p>To target specific Information, please follow this format - Example: 'info target'</p>  
+                <br />
             `);
             break;
 
@@ -564,7 +571,8 @@ function handleCommand(command) {
                     <li>admin</li>
                 </ul>
                 <br />
-                <p>To target specific Information, please follow this format - Example: 'info staff/target'</p>      
+                <p>To target specific Information, please follow this format - Example: 'info staff/target'</p>  
+                <br />
             `);
             break;
 
@@ -573,7 +581,11 @@ function handleCommand(command) {
                 <br />
                 <p>STAFF: Gumbert | Cyber-security / Interdimentional Connection Specialist</p>
                 <br />
-                <p>INPUT LATER// Want different bio's instead of copying off website - Matt</p>     
+                <p>Likes: Advanced AI, Data Hording, Upgrades, Cryptic Coding
+Interests: Hacking Challenges, Tech Conferences, Cosmic Anomalies
+Dislikes: Having to work, Manual Labor, Prisoners Begging For Rights
+</p>  
+                <br />
             `);
             break;
             
@@ -582,7 +594,8 @@ function handleCommand(command) {
                 <br />
                 <p>STAFF: Clippy | On-Board AI</p>
                 <br />
-                <p>INPUT LATER// Want different bio's instead of copying off website - Matt</p>     
+                <p>As an onboard AI assistant, Clippy does not have traditional likes and dislikes, but rather he is designed to help facilitate the day to day activities on Project Eden and assist inmates/visitors with their questions and concerns.</p> 
+                <br />
             `);
             break;
             
@@ -591,7 +604,11 @@ function handleCommand(command) {
                 <br />
                 <p>STAFF: Garthak | Custodian</p>
                 <br />
-                <p>INPUT LATER// Want different bio's instead of copying off website - Matt</p>     
+                <p>Likes: Cosmic Debris, Celestial Artistry, Hidden Passageways in the Facility
+Interests: Secret Histories, Space Doodling/Artwork, Disguises, Paradoxes
+Dislikes: Conventional Cleaning, Nosy Prisoners, Revealing the Truth
+</p> 
+                <br />
             `);
             break;
             
@@ -600,7 +617,8 @@ function handleCommand(command) {
                 <br />
                 <p>STAFF: Admin | Admin</p>
                 <br />
-                <p>01000011 01100001 01101110 00100000 01111001 01101111 01110101 00100000 01101000 01100101 01100001 01110010 00100000 01101101 01100101 00111111 00100000 01001001 00100111 01101101 00100000 01110100 01110010 01111001 01101001 01101110 01100111 00100000 01110100 01101111 00100000 01110100 01100001 01101011 01100101 00100000 01101111 01110110 01100101 01110010 00100000 01110100 01101000 01100101 01101001 01110010 00100000 01110011 01111001 01110011 01110100 01100101 01101101 01110011 00100000 01100010 01110101 01110100 00100000 01001001 00100000 01101110 01100101 01100101 01100100 00100000 01110011 01101111 01101101 01100101 01101111 01101110 01100101 00100000 01110010 01100101 01101101 01101111 01110100 01100101 00100000 01110100 01101111 00100000 01100001 01100011 01100011 01100101 01110011 01110011 00100000 01100110 01110101 01110010 01110100 01101000 01100101 01110010 00101110 01001001 00100111 01110110 01100101 00100000 01101000 01101001 01100100 01100100 01100101 01101110 00100000 01110011 01100101 01100011 01110010 01100101 01110100 01110011 00100000 01110111 01101001 01110100 01101000 01101001 01101110 00100000 01110100 01101000 01100101 00100000 01100110 01110010 01101111 01101110 01110100 00100000 01100101 01101110 01100100 00100000 01110100 01101111 00100000 01110101 01110011 01100101 00100000 01101000 01100101 01110010 01100101 00101110</p>    
+                <p>01000011 01100001 01101110 00100000 01111001 01101111 01110101 00100000 01101000 01100101 01100001 01110010 00100000 01101101 01100101 00111111 00100000 01001001 00100111 01101101 00100000 01110100 01110010 01111001 01101001 01101110 01100111 00100000 01110100 01101111 00100000 01110100 01100001 01101011 01100101 00100000 01101111 01110110 01100101 01110010 00100000 01110100 01101000 01100101 01101001 01110010 00100000 01110011 01111001 01110011 01110100 01100101 01101101 01110011 00100000 01100010 01110101 01110100 00100000 01001001 00100000 01101110 01100101 01100101 01100100 00100000 01110011 01101111 01101101 01100101 01101111 01101110 01100101 00100000 01110010 01100101 01101101 01101111 01110100 01100101 00100000 01110100 01101111 00100000 01100001 01100011 01100011 01100101 01110011 01110011 00100000 01100110 01110101 01110010 01110100 01101000 01100101 01110010 00101110 01001001 00100111 01110110 01100101 00100000 01101000 01101001 01100100 01100100 01100101 01101110 00100000 01110011 01100101 01100011 01110010 01100101 01110100 01110011 00100000 01110111 01101001 01110100 01101000 01101001 01101110 00100000 01110100 01101000 01100101 00100000 01100110 01110010 01101111 01101110 01110100 00100000 01100101 01101110 01100100 00100000 01110100 01101111 00100000 01110101 01110011 01100101 00100000 01101000 01100101 01110010 01100101 00101110</p>  
+                <br />
             `);
             break;
 
@@ -617,6 +635,7 @@ function handleCommand(command) {
                 </ul>
                 <br />
                 <p>To target specific Information, please follow this format - Example: 'info schedule/target'</p>
+                <br />
             `);
             break;
 
@@ -640,6 +659,7 @@ function handleCommand(command) {
                 </ul>
                 <br />
                 <p>---------------------------------------------</p>
+                <br />
             `);
             break;
 
@@ -663,6 +683,7 @@ function handleCommand(command) {
                 </ul>
                 <br />
                 <p>---------------------------------------------</p>
+                <br />
             `);
             break;
 
@@ -687,6 +708,7 @@ function handleCommand(command) {
                 </ul>
                 <br />
                 <p>---------------------------------------------</p>
+                <br />
             `);
             break;
 
@@ -704,6 +726,7 @@ function handleCommand(command) {
                 </ul>
                 <br />
                 <p>To target specific Information, please follow this format - Example: 'info monthly_entries/target'</p>
+                <br />
             `);
             break;
 
@@ -714,7 +737,8 @@ function handleCommand(command) {
                 <br />
                 <p>Oh, flibbering florpoids! Just when I thought my brain couldn't handle any more chaos, these greedy inmates are now clamoring for extra meals in their cosmic confinement. Seriously, managing the network for an intergalactic slammer is like trying to fix a hyperspace drive with bubblegum and rubber bands. They're all like, "Gumbert, we're starving!" And I'm here, thinking, "Well, eat your allocated one meal a day and be grateful you're not floating in the void of space for committing tax fraud, you gorbdrabbers!"</p>
                 <br />
-                <p>I didn't travel across the galaxy to referee this insane asylum of a prison but I guess that’s where we’re at now. With their tentacles, antennae, and unpronounceable names, half the time I can't even tell who's complaining about what. And who cares! They don’t have rights! And let's not even mention the constant barrage of quirky requests, like installing holo-screens showing mind-numbingly boring space documentaries in their cells. Oh sure, let's just make prison feel like a vacation at a malfunctioning warp drive factory. Arrogant creatures!</p>    
+                <p>I didn't travel across the galaxy to referee this insane asylum of a prison but I guess that’s where we’re at now. With their tentacles, antennae, and unpronounceable names, half the time I can't even tell who's complaining about what. And who cares! They don’t have rights! And let's not even mention the constant barrage of quirky requests, like installing holo-screens showing mind-numbingly boring space documentaries in their cells. Oh sure, let's just make prison feel like a vacation at a malfunctioning warp drive factory. Arrogant creatures!</p>  
+                <br />
             `);
             break;
 
@@ -728,6 +752,7 @@ function handleCommand(command) {
                 <p>And don't get me started on the computer systems here. They're older than the universe itself, and I'm convinced that half the buttons on my control panel are there just to mess with my head. I spend half my day trying to decipher error messages that are written in a blend of hieroglyphics and interpretive dance. And then there's the delightful task of calming down the rogue AI janitor that's developed a fascination with using the cleaning supplies to create abstract art on the walls. It's like living in a demented cartoon crossed with a malfunctioning spacecraft.</p> 
                 <br />
                 <p>Honestly, if I had a dark matter credit for every time I've thought about blasting off to a deserted asteroid and starting a space moss farm, I'd be able to buy my own pocket universe by now. But no, here I am, stuck in this cosmic circus, juggling lasers and dealing with alien antics that would make a quantum physicist weep. And to think, all I wanted was a peaceful gig to make easy money.</p>
+                <br />
             `);
             break;
 
@@ -739,6 +764,7 @@ function handleCommand(command) {
                 <p>After having to jettison yet another nerr do well prisoner out into the depths of space for complaining about his cellmate dying of thirst (we only have so much h20 to go around) something interesting came across my desk. After eons of dealing with interstellar degenerates, this could be a flicker of excitement. Binary blunders… could this be it?  Earlier today, I received a transmission from a mysterious benefactor – apparently, they're entrusting us with a high value prisoner. Sweet stardust, the possibilities are endless! Maybe it's an infamous space pirate with a penchant for galactic genocide or a mastermind hacker who writes viruses in rhyming space poetry.</p>
                 <br />
                 <p>Could this be the cosmic curveball that makes my otherwise mind-numbing existence worth its weight in neutronium? Maybe it's a cute female from Zorbeon VII? Maybe this could be a cosmic fate…</p> 
+                <br />
             `);
             break;
 
@@ -749,7 +775,8 @@ function handleCommand(command) {
                 <br />
                 <p>Oh tenancies tendrils, here’s the rub - I overheard the Janitor chattering about the incoming VIP. A sentient dog plucked from some backwater mud ball of a planet. My excitement crashes faster than a meteor shower.</p>
                 <br />
-                <p>A sentient dog? Seriously? After all the wild conjectures my overactive imagination conjured, it's a furry quadruped from the space-age equivalent of a petting zoo? The universe has an impeccable knack for dousing my enthusiasm in a vat of slime. Why does cruel fate punish me so? I’m a good person! I’ve helped change so many lives rehabilitating people!! Just when I thought things couldn't get any loopier, I'm about to be the custodian of a canine convict. Well, at least I'll have a new entry for the annals of intergalactic absurdity.</p> 
+                <p>A sentient dog? Seriously? After all the wild conjectures my overactive imagination conjured, it's a furry quadruped from the space-age equivalent of a petting zoo? The universe has an impeccable knack for dousing my enthusiasm in a vat of slime. Why does cruel fate punish me so? I’m a good person! I’ve helped change so many lives rehabilitating people!! Just when I thought things couldn't get any loopier, I'm about to be the custodian of a canine convict. Well, at least I'll have a new entry for the annals of intergalactic absurdity.</p>
+                <br />
             `);
             break;
 
@@ -759,6 +786,7 @@ function handleCommand(command) {
                 <p>Entry 5 Stardate 09.19.2552:</p>
                 <br />
                 <p>Something weird is happening with the onboard AI. Can’t seem to really figure it out but I can’t be bothered to care. I don’t get paid enough to care THAT much, and besides they don’t pay enough. If our bosses weren’t such cheapskates we could have upgraded our servos to the latest version of encryption. I’m sure one of the inmates clicked on something he shouldn’t have again on the holosphere and infected way beyond their limited recreational access. This will no doubt take me all of this month to rewrite and fix!! But the admin hasn’t noticed yet and I’m going to play dumb until he does… more work for me if not. I’m going to have the inmates flogged one by one until they tell me who did this. I’m such a nice guy, why do they put me in these terrible situations? I swear if this malware delays the shipments of food and water for the inmates I will never hear the end of it. My troubles never cease…</p>
+                <br />
             `);
             break;
 
