@@ -1,5 +1,6 @@
 const commandInput = document.getElementById('command-input');
 const output = document.querySelector('.output');
+const originalBackgroundImage = getComputedStyle(document.body).backgroundImage;
 let isPasswordEntered = false; // Initialize the password check variable
 let isSecretPasswordEntered = false;
 let listenCommandCount = 0;
