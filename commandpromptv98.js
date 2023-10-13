@@ -110,7 +110,7 @@ function handleCommand(command) {
                     <li>pipes</li>
                 </ul>
                 <br />
-                <p>To get started, simply type your desired command and follow the prompts. Keep your limbs and tentacles inside the terminal at all times, and don't access any programs that you don't have clearance to.</p>
+                <p>To select a background, please follow this format - Example: 'background/target'</p>
                 <br />
             `);
             break;
