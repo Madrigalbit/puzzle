@@ -99,6 +99,31 @@ function handleCommand(command) {
             `);
             break;
 
+                 case 'background':
+            appendOutput(`
+                <br />
+                <p>Select a new background:</p>
+                <br />
+                <ul>
+                    <li>One</li>
+                    <li>Two</li>
+                    <li>Three</li>
+                </ul>
+                <br />
+                <p>To get started, simply type your desired command and follow the prompts. Keep your limbs and tentacles inside the terminal at all times, and don't access any programs that you don't have clearance to.</p>
+                <br />
+            `);
+            break;
+
+                case 'background/one':
+                document.getElementById('terminal').style.backgroundImage = 'url("https://uploads-ssl.webflow.com/64b5a4e0b3eb0b798719403e/65294ccc98babfd4b207d909_youtube-video-gif%20(1).gif")';
+            appendOutput(`
+                <br />
+                <p>You have successfully changed the background.</p>
+                <br />
+            `);
+            break;
+
             case 'warning':
             appendOutput(`
                 <br />
