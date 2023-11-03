@@ -85,7 +85,9 @@ function handleCommand(command) {
             <br />
             <p>Command not recognized: ${command}</p>
             <br />
-            <p>Please be sure you are using the correct targeting, for example: info staff/gumbert</p>
+            <p>Please be sure you are using the correct targeting, for example:</p>
+            <br />
+            <p>info staff/gumbert</p>
             <br />
             `);
             break;
