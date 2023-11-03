@@ -318,83 +318,80 @@ function handleCommand(command) {
             `);
             break;
 
-            switch (userInput) {
-    case 'progs coinflip':
-        // Check if the coin has been flipped already to prevent flipping it again.
-        if (coinResult === null) {
-            // Flip the coin and store the result.
-            coinResult = Math.random() < 0.5 ? 'heads' : 'tails';
-            appendOutput(`
-                <br />
-                <p>BOOT: AGESPAST.exe</p>
-                <p>BOOT SUCCESSFUL.</p>
-                <br />
-                <p>THE COIN BEFORE YOU BEARS THE WEIGHT OF HISTORY IN ITS CORRODED GROOVES, A SILENT WITNESS TO AGES LONG PAST.</p>
-                <br />
-                <p>WHAT WILL YOU DO?</p>
-                <br />
-                <ul>
-                    <li>flip</li>
-                    <li>examine</li>
-                    <li>leave</li>
-                </ul>
-                <br />
-            `);
-        } else {
-            appendOutput(`
-                <br />
-                <p>The coin has already been flipped. You cannot flip it again.</p>
-                <br />
-            `);
-        }
-        break;
-
-    case 'flip':
-        if (coinResult === null) {
-            appendOutput(`
-                <br />
-                <p>You cannot flip the coin before examining it.</p>
-                <br />
-            `);
-        } else {
-            appendOutput(`
-                <br />
-                <p>WITH A FLICK OF YOUR THUMB, THE RUSTY COIN SPINS THROUGH THE AIR, ITS BATTERED SURFACE REFLECTING FLEETING MOMENTS OF LIGHT - EONS IN AN INSTANCE.</p>
-                <br />
-                <p>IT LANDS.</p>
-                <br />
-                <p>……………………..</p>
-                <br />
-                <p>${coinResult.toUpperCase()}</p>
-                <br />
-            `);
-        }
-        break;
-
-    case 'examine':
-        if (coinResult === null) {
-            appendOutput(`
-                <br />
-                <p>You must flip the coin before examining it.</p>
-                <br />
-            `);
-        } else {
-            appendOutput(`
-                <br />
-                <p>THE OLD COIN IS LITTERED WITH SCRATCHES, INDENTS, AND WORN EDGES - A MONUMENT TO TIME. The coin landed on ${coinResult}.</p>
-                <br />
-            `);
-        }
-        break;
-
-    case 'leave':
+            case 'progs coinflip':
+    if (coinResult === null) {
+        // Flip the coin and store the result.
+        coinResult = Math.random() < 0.5 ? 'heads' : 'tails';
         appendOutput(`
             <br />
-            <p>YOU WALK AWAY FROM THE COIN.</p>
+            <p>BOOT: AGESPAST.exe</p>
+            <p>BOOT SUCCESSFUL.</p>
+            <br />
+            <p>THE COIN BEFORE YOU BEARS THE WEIGHT OF HISTORY IN ITS CORRODED GROOVES, A SILENT WITNESS TO AGES LONG PAST.</p>
+            <br />
+            <p>WHAT WILL YOU DO?</p>
+            <br />
+            <ul>
+                <li>flip</li>
+                <li>examine</li>
+                <li>leave</li>
+            </ul>
             <br />
         `);
-        break;
-}
+    } else {
+        appendOutput(`
+            <br />
+            <p>The coin has already been flipped. You cannot flip it again.</p>
+            <br />
+        `);
+    }
+    break;
+
+case 'flip':
+    if (coinResult === null) {
+        appendOutput(`
+            <br />
+            <p>You cannot flip the coin before examining it.</p>
+            <br />
+        `);
+    } else {
+        appendOutput(`
+            <br />
+            <p>WITH A FLICK OF YOUR THUMB, THE RUSTY COIN SPINS THROUGH THE AIR, ITS BATTERED SURFACE REFLECTING FLEETING MOMENTS OF LIGHT - EONS IN AN INSTANCE.</p>
+            <br />
+            <p>IT LANDS.</p>
+            <br />
+            <p>……………………..</p>
+            <br />
+            <p>${coinResult.toUpperCase()}</p>
+            <br />
+        `);
+    }
+    break;
+
+case 'examine':
+    if (coinResult === null) {
+        appendOutput(`
+            <br />
+            <p>You must flip the coin before examining it.</p>
+            <br />
+        `);
+    } else {
+        appendOutput(`
+            <br />
+            <p>THE OLD COIN IS LITTERED WITH SCRATCHES, INDENTS, AND WORN EDGES - A MONUMENT TO TIME. The coin landed on ${coinResult}.</p>
+            <br />
+        `);
+    }
+    break;
+
+case 'leave':
+    appendOutput(`
+        <br />
+        <p>YOU WALK AWAY FROM THE COIN.</p>
+        <br />
+    `);
+    break;
 
             case 'progs admin_dir':
             appendOutput(`
