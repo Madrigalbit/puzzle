@@ -4,6 +4,7 @@ const originalBackgroundImage = getComputedStyle(document.body).backgroundImage;
 let isPasswordEntered = false; // Initialize the password check variable
 let isKeyHeld = false; // Flag to track if a key is held down
 let audioTimer = null; // Initialize a timer variable
+let audioPlaying = false; // Flag to track if audio is currently playing
 let isSecretPasswordEntered = false;
 let listenCommandCount = 0;
 let coinResult = null;
@@ -63,8 +64,16 @@ commandInput.addEventListener('keydown', function(event) {
 });
 
 function playAudio() {
-    const audio = new Audio('https://www.fesliyanstudios.com/play-mp3/649'); // Replace with your audio file URL
-    audio.play(); // Play the audio
+    if (!isKeyHeld && !audioPlaying) {
+        audioPlaying = true; // Set the audioPlaying flag to true to indicate audio is playing
+        const audio = new Audio('https://www.fesliyanstudios.com/play-mp3/649'); // Replace with your audio file URL
+        audio.play(); // Play the audio
+
+        // Set a timeout to reset the audioPlaying flag after audio finishes playing
+        audio.addEventListener('ended', function() {
+            audioPlaying = false;
+        });
+    }
 }
 
 const playButton = document.getElementById('play-button'); // Assuming you have an HTML button with id="play-button"
@@ -75,7 +84,11 @@ document.addEventListener('keydown', function(event) {
         isKeyHeld = true;
     }
     if (!isKeyHeld) {
+        if (audioTimer) {
+            clearTimeout(audioTimer); // Clear the previous timer
+        }
         playAudio(); // Call the playAudio function on keydown
+        isKeyHeld = true; // Set the flag to indicate a key is held down
     }
 });
 
