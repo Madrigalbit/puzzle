@@ -423,7 +423,6 @@ function handleCommand(command) {
                     <br />
                     <ul>
                     <li>progs security</li>
-                    <li>info lore</li>
                     <li>progs listen</li>
                     </ul>
                     <br />
@@ -442,12 +441,19 @@ function handleCommand(command) {
                 break;
 
             case 'progs fortune':
+                if (!isPasswordEntered) {
+                    appendOutput("<br /><p>Access denied</p>");
+                } else {
             const randomIndex = Math.floor(Math.random() * randomMessages.length);
             const randomMessage = randomMessages[randomIndex];
             appendOutput(`<br /><p>${randomMessage}</p>`);
+                }
             break;
 
             case 'progs listen':
+                 if (!isSecretPasswordEntered) {
+                    appendOutput("<br /><p>Access denied</p>");
+                } else {
             if (listenCommandCount < 3) {
                 const randomChance = Math.random();
                 if (randomChance <= 0.05) {
@@ -482,6 +488,7 @@ function handleCommand(command) {
             } else {
                 appendOutput(`<p>Usage limit reached for "progs listen." You can only use it 3 times.</p><br />`);
             }
+                 }
             break;
 
             
@@ -504,6 +511,9 @@ function handleCommand(command) {
             break;
 
                 case 'info entries':
+                if (!isPasswordEntered) {
+                    appendOutput("<br /><p>Access denied</p>");
+                } else {
             appendOutput(`
                 <br />
                 <p>Access written entries. Example: 'info entries/target'</p>
@@ -516,9 +526,13 @@ function handleCommand(command) {
                 </ul>
                 <br />     
             `);
+                }
             break;
 
                 case 'info entries/entry_1':
+                if (!isPasswordEntered) {
+                    appendOutput("<br /><p>Access denied</p>");
+                } else {
             appendOutput(`
                 <br />
                 <p>Date: [Unknown]</p>
@@ -526,9 +540,13 @@ function handleCommand(command) {
                 <p>It's been a week since I took up the position as the IT administrator here at this  facility. Can't believe I ended up dealing with interstellar wires and alien firewalls when all of this tech has to be lightyears old. The endless corridors, the strange sounds – it's like living in a mad scientist's version of a prison. I'm just here for the credits, but the monotony is maddening. I might as well be debugging the cosmos, they’ve hidden so many layers of weird… code here it boggles the mind. None of this makes sense, and its almost contradictory in how its been laid out. I have no idea who programmed this but that’s an awful omen to have at the beginning of my job here. Its like no one really cares what’s going on here, the rest of the galaxy just puts galactic criminals here and shut the door and forget about them. Moralities aside, I guess it’s not so bad. It’ll give me something to ticker with to pass the days I suppose. Maybe one day, I'll find something more exciting than a malfunctioning food dispenser.</p>
                 <br />     
             `);
+                }
             break;
 
                 case 'info entries/entry_2':
+                if (!isPasswordEntered) {
+                    appendOutput("<br /><p>Access denied</p>");
+                } else {
             appendOutput(`
                 <br />
                 <p>Date: [Unknown]</p>
@@ -536,9 +554,13 @@ function handleCommand(command) {
                 <p>Stumbled upon some strange texts today while sorting through the ancient archives. Cryptic symbols, eerie diagrams – they're unlike anything I've ever seen. Could be some alien language, but there's a foreboding undertone to it all. I reported it to the admin and the janitor here but they both dismissed it as cosmic graffiti. I don’t know, some of this is really ancient code but I can’t seem to really decipher it. All in all I can't shake off the unease. There's something they're hiding beneath the surface, something more than this place's already morally questionable chaos. Well, if they don’t seem to care maybe I’ve found a puzzle here to tinker with to keep my mind busy. Who knows, I may learn something interesting.</p>
                 <br />     
             `);
+                }
             break;
 
                 case 'info entries/entry_3':
+                if (!isPasswordEntered) {
+                    appendOutput("<br /><p>Access denied</p>");
+                } else {
             appendOutput(`
                 <br />
                 <p>Date: [Unknown]</p>
@@ -546,9 +568,13 @@ function handleCommand(command) {
                 <p>My suspicions were right. I've decoded enough of those texts to uncover the horror that this place harbors. I can’t even believe I’m writing this but not only are the conditions here terrible they're actually sacrificing the inmates here. Intentionally killing them to offer them to some twisted machine deity. The reports mention "divine energy transfer," but it's a euphemism for the gruesome reality. The prisoners are nothing more than fuel for this sinister cosmic engine - and maybe that’s why the conditions here are so bad. My hands are trembling as I write this. I can't fathom the depths of this malevolence. I can’t be here anymore, I’ve requested a transfer off of this place immediately.</p>
                 <br />     
             `);
+                }
             break;
 
                 case 'info entries/entry_4':
+                if (!isPasswordEntered) {
+                    appendOutput("<br /><p>Access denied</p>");
+                } else {
             appendOutput(`
                 <br />
                 <p>Date: [Unknown]</p>
@@ -566,9 +592,13 @@ function handleCommand(command) {
                 <p>'info entries/entry_00'</p>
                 <br />
             `);
+                }
             break;
 
                 case 'info entries/entry_00':
+                if (!isPasswordEntered) {
+                    appendOutput("<br /><p>Access denied</p>");
+                } else {
             appendOutput(`
                 <br />
                 <p>@@@@@@@@@@@@@@@@&&&&&&&&&&&&%%%%%%%###########((((########%%%%%%%&&&&&&&&&&&@@@@@@@@@@@@@@
@@ -602,6 +632,7 @@ function handleCommand(command) {
 </p>
                 <br />
             `);
+                }
             break;
 
              case 'info staff':
@@ -846,6 +877,9 @@ Dislikes: Conventional Cleaning, Nosy Prisoners, Revealing the Truth
             break;
 
             case 'info wanted_posters/zog':
+                if (!isPasswordEntered) {
+                    appendOutput("<br /><p>Access denied</p>");
+                } else {
             appendOutput(`
                 <br />
                 <p>WANTED: Zog</p>
@@ -859,9 +893,13 @@ Dislikes: Conventional Cleaning, Nosy Prisoners, Revealing the Truth
                 <p>Grand theft pastry, unauthorized planet painting (he turned a gas giant into a giant smiley face), and disturbing the peace with his cosmic comedy open mic nights.</p>
                 <br />
             `);
+                }
             break;
 
             case 'info wanted_posters/glitterbeard':
+                if (!isPasswordEntered) {
+                    appendOutput("<br /><p>Access denied</p>");
+                } else {
             appendOutput(`
                 <br />
                 <p>WANTED: Glitterbeard the Galactic Pirate</p>
@@ -875,9 +913,13 @@ Dislikes: Conventional Cleaning, Nosy Prisoners, Revealing the Truth
                 <p>Space piracy, interstellar looting, and excessive use of glitter in a no-glitter zone.</p>
                 <br />
             `);
+                }
             break;
 
             case 'info wanted_posters/blip':
+                if (!isPasswordEntered) {
+                    appendOutput("<br /><p>Access denied</p>");
+                } else {
             appendOutput(`
                 <br />
                 <p>WANTED: Blip</p>
@@ -891,9 +933,13 @@ Dislikes: Conventional Cleaning, Nosy Prisoners, Revealing the Truth
                 <p>Brain theft, identity theft, and creating chaos at scientific symposiums.</p>
                 <br />
             `);
+                }
             break;
 
             case 'info wanted_posters/quarko':
+                if (!isPasswordEntered) {
+                    appendOutput("<br /><p>Access denied</p>");
+                } else {
             appendOutput(`
                 <br />
                 <p>WANTED: Captain Quarko</p>
@@ -907,9 +953,13 @@ Dislikes: Conventional Cleaning, Nosy Prisoners, Revealing the Truth
                 <p>Unauthorized asteroid wrangling, reckless comet riding, and disturbing the peace with loud cosmic yeehaws.</p>
                 <br />
             `);
+                }
             break;
 
             case 'info wanted_posters/letharia':
+                if (!isPasswordEntered) {
+                    appendOutput("<br /><p>Access denied</p>");
+                } else {
             appendOutput(`
                 <br />
                 <p>WANTED: Lady Letharia</p>
@@ -923,9 +973,13 @@ Dislikes: Conventional Cleaning, Nosy Prisoners, Revealing the Truth
                 <p>Grand theft starship parts, regicide on six planets, and fashion crimes against the Intergalactic Fashion Police.</p>
                 <br />
             `);
+                }
             break;
 
             case 'info wanted_posters/dr_quasar':
+                if (!isPasswordEntered) {
+                    appendOutput("<br /><p>Access denied</p>");
+                } else {
             appendOutput(`
                 <br />
                 <p>WANTED: Dr. Quasar</p>
@@ -939,9 +993,13 @@ Dislikes: Conventional Cleaning, Nosy Prisoners, Revealing the Truth
                 <p>Unauthorized cosmic tinkering, reckless appliance creation, and disturbing the cosmic balance with his reckless experiments.</p>
                 <br />
             `);
+                }
             break;
 
             case 'info wanted_posters/dogelon':
+                if (!isPasswordEntered) {
+                    appendOutput("<br /><p>Access denied</p>");
+                } else {
             appendOutput(`
                 <br />
                 <p>WANTED: Dogelon</p>
@@ -955,9 +1013,13 @@ Dislikes: Conventional Cleaning, Nosy Prisoners, Revealing the Truth
                 <p>...</p>
                 <br />
             `);
+                }
             break;
 
             case 'info incident_reports':
+                if (!isPasswordEntered) {
+                    appendOutput("<br /><p>Access denied</p>");
+                } else {
             appendOutput(`
                 <br />
                 <p>Shows most recent incident reports.</p>
@@ -973,9 +1035,13 @@ Dislikes: Conventional Cleaning, Nosy Prisoners, Revealing the Truth
                 </ul>
                 <br />
             `);
+                }
             break;
 
             case 'info incident_reports/9.5.2050':
+                if (!isPasswordEntered) {
+                    appendOutput("<br /><p>Access denied</p>");
+                } else {
             appendOutput(`
                 <br />
                 <p>Incident Report</p>
@@ -987,9 +1053,13 @@ Dislikes: Conventional Cleaning, Nosy Prisoners, Revealing the Truth
                 <p>Inmates have reported a rampant slime mold infestation that has taken over the south wing of the prison. Attempts to negotiate a peaceful surrender have been met with indifference from the slime molds. They seem to have a taste for paperwork, and several incident reports are now missing presumed devoured. Inmates have nicknamed the mold "Slippery Death"</p>
                 <br />
             `);
+                }
             break;
 
             case 'info incident_reports/5.15.2051':
+                if (!isPasswordEntered) {
+                    appendOutput("<br /><p>Access denied</p>");
+                } else {
             appendOutput(`
                 <br />
                 <p>Incident Report</p>
@@ -1001,9 +1071,13 @@ Dislikes: Conventional Cleaning, Nosy Prisoners, Revealing the Truth
                 <p>A bizarre outbreak of phantom limb syndrome has taken hold of Cell Block E. Inmates are convinced that they have extra limbs or that their limbs have swapped places with others. This has resulted in surreal dance-offs, slapstick accidents, and a thriving black market for prosthetic limbs made from smuggled cafeteria trays.</p>
                 <br />
             `);
+                }
             break;
 
             case 'info incident_reports/7.10.2051':
+                if (!isPasswordEntered) {
+                    appendOutput("<br /><p>Access denied</p>");
+                } else {
             appendOutput(`
                 <br />
                 <p>Incident Report</p>
@@ -1015,9 +1089,13 @@ Dislikes: Conventional Cleaning, Nosy Prisoners, Revealing the Truth
                 <p>Inmates in Cell Block D have reported nightly disturbances caused by a mysterious alien jazz band. The band plays otherworldly tunes, keeping everyone awake with its interdimensional grooves. Inmates have taken to dancing the "Galactic Cha-Cha" instead of sleeping, making the place even more unbearable.</p>
                 <br />
             `);
+                }
             break;
 
              case 'info incident_reports/8.5.2051':
+                if (!isPasswordEntered) {
+                    appendOutput("<br /><p>Access denied</p>");
+                } else {
             appendOutput(`
                 <br />
                 <p>Incident Report</p>
@@ -1029,9 +1107,13 @@ Dislikes: Conventional Cleaning, Nosy Prisoners, Revealing the Truth
                 <p>The prison cafeteria mistakenly served cheeseburgers made from a mysterious alien meat substitute. Inmates are now convinced that they have been invaded by sentient space cows. They demand "real" cheeseburgers or a meeting with the intergalactic dairy council. The rebellion is being led by an inmate known as "Bob”.</p>
                 <br />
             `);
+                }
             break;
 
             case 'info incident_reports/4.3.2052':
+                if (!isPasswordEntered) {
+                    appendOutput("<br /><p>Access denied</p>");
+                } else {
             appendOutput(`
                 <br />
                 <p>Incident Report</p>
@@ -1043,9 +1125,13 @@ Dislikes: Conventional Cleaning, Nosy Prisoners, Revealing the Truth
                 <p>A group of enterprising inmates in Cell Block F has established an inmate-run petting zoo using alien creatures they've captured during recreational time. The zoo features bizarre and potentially dangerous extraterrestrial life forms. Surprisingly, inmate morale has improved, but security is grappling with the consequences of "Cuddly the Carnivorous" escape attempts.</p>
                 <br />
             `);
+                }
             break;
 
             case 'info incident_reports/4.20.2052':
+                if (!isPasswordEntered) {
+                    appendOutput("<br /><p>Access denied</p>");
+                } else {
             appendOutput(`
                 <br />
                 <p>Incident Report</p>
@@ -1057,9 +1143,13 @@ Dislikes: Conventional Cleaning, Nosy Prisoners, Revealing the Truth
                 <p>A sudden toilet disappearance crisis has struck Cell Block C. Toilets have gone missing, leaving inmates with no choice but to use ingenious DIY methods involving vacuum cleaners and rubber gloves. One inmate has declared himself "Supreme Ruler of All Things" and is now leading a rebellion for the return of their porcelain thrones.</p>
                 <br />
             `);
+                }
             break;
 
             case 'info maintenance_req':
+                if (!isPasswordEntered) {
+                    appendOutput("<br /><p>Access denied</p>");
+                } else {
             appendOutput(`
                 <br />
                 <p>Shows most recent maintenance requests.</p>
@@ -1075,9 +1165,13 @@ Dislikes: Conventional Cleaning, Nosy Prisoners, Revealing the Truth
                 </ul>
                 <br />
             `);
+                }
             break;
 
             case 'info maintenance_req/8.20.2051':
+                if (!isPasswordEntered) {
+                    appendOutput("<br /><p>Access denied</p>");
+                } else {
             appendOutput(`
                 <br />
                 <p>Maintenance Request</p>
@@ -1089,9 +1183,13 @@ Dislikes: Conventional Cleaning, Nosy Prisoners, Revealing the Truth
                 <p>The disco ball in the recreational area has malfunctioned. Instead of casting dazzling reflections, it now projects images of celebrity alien chefs preparing gourmet meals and alternating between shooting actual lasers. Inmates are concerned about potential food cravings and have asked for it to be fixed before they start demanding edible meals in the prison cafeteria.</p>
                 <br />
             `);
+                }
             break;
 
             case 'info maintenance_req/9.5.2051':
+                if (!isPasswordEntered) {
+                    appendOutput("<br /><p>Access denied</p>");
+                } else {
             appendOutput(`
                 <br />
                 <p>Maintenance Request</p>
@@ -1103,9 +1201,13 @@ Dislikes: Conventional Cleaning, Nosy Prisoners, Revealing the Truth
                 <p>Inmates from Cell Block A have reported that gravity seems to be on an extended vacation. Objects are floating around like interstellar tourists, and the exercise yard has turned into a zero-gravity dance floor. Inmates are requesting a return ticket for gravity.</p>
                 <br />
             `);
+                }
             break;
 
             case 'info maintenance_req/4.3.2052':
+                if (!isPasswordEntered) {
+                    appendOutput("<br /><p>Access denied</p>");
+                } else {
             appendOutput(`
                 <br />
                 <p>Maintenance Request</p>
@@ -1117,9 +1219,13 @@ Dislikes: Conventional Cleaning, Nosy Prisoners, Revealing the Truth
                 <p>The laundry room's washing machines have developed teleportation capabilities. Inmates are now receiving their clean laundry from different galaxies and timelines, leading to some fashion-forward mix-ups. Inmates are requesting the option to keep their newly acquired alien fashion, even if it's not their size.</p>
                 <br />
             `);
+                }
             break;
 
             case 'info maintenance_req/5.15.2052':
+                if (!isPasswordEntered) {
+                    appendOutput("<br /><p>Access denied</p>");
+                } else {
             appendOutput(`
                 <br />
                 <p>Maintenance Request</p>
@@ -1131,9 +1237,13 @@ Dislikes: Conventional Cleaning, Nosy Prisoners, Revealing the Truth
                 <p>The automated janitorial robots have gone rogue and are engaged in an endless battle in the prison's hallways.  Inmates are requesting someone deactivate the robots before they kill any more prisoners.</p>
                 <br />
             `);
+                }
             break;
 
             case 'info maintenance_req/6.5.2052':
+                if (!isPasswordEntered) {
+                    appendOutput("<br /><p>Access denied</p>");
+                } else {
             appendOutput(`
                 <br />
                 <p>Maintenance Request</p>
@@ -1145,9 +1255,13 @@ Dislikes: Conventional Cleaning, Nosy Prisoners, Revealing the Truth
                 <p>The vending machine in the common area has developed a mysterious and mischievous personality. It dispenses snacks only when you tell it a joke and refuses service to anyone in a bad mood. Inmates are requesting an exorcism or, at the very least, a comedy show to keep the snacks flowing.</p>
                 <br />
             `);
+                }
             break;
 
             case 'info maintenance_req/7.10.2052':
+                if (!isPasswordEntered) {
+                    appendOutput("<br /><p>Access denied</p>");
+                } else {
             appendOutput(`
                 <br />
                 <p>Maintenance Request</p>
@@ -1159,9 +1273,13 @@ Dislikes: Conventional Cleaning, Nosy Prisoners, Revealing the Truth
                 <p>An escape hatch in Cell Block C has malfunctioned, but instead of leading to freedom, it opens into a maintenance closet filled with brooms, mops, and a surprisingly talkative mop bucket. Inmates are requesting a more straightforward escape route, or at least an upgrade for the closet to include a snack bar.</p>
                 <br />
             `);
+                }
             break;
 
             case 'info letters':
+                if (!isPasswordEntered) {
+                    appendOutput("<br /><p>Access denied</p>");
+                } else {
             appendOutput(`
                 <br />
                 <p>Shows most recent received letters.</p>
@@ -1175,9 +1293,13 @@ Dislikes: Conventional Cleaning, Nosy Prisoners, Revealing the Truth
                 </ul>
                 <br />
             `);
+                }
             break;
 
             case 'info letters/letter1':
+                if (!isPasswordEntered) {
+                    appendOutput("<br /><p>Access denied</p>");
+                } else {
             appendOutput(`
                 <br />
                 <p>Letter #1</p>
@@ -1188,9 +1310,13 @@ With love, Aunt Mildred
 </p>
                 <br />
             `);
+                }
             break;
 
              case 'info letters/letter2':
+                if (!isPasswordEntered) {
+                    appendOutput("<br /><p>Access denied</p>");
+                } else {
             appendOutput(`
                 <br />
                 <p>Letter #2</p>
@@ -1203,9 +1329,13 @@ Dr. Quasar
 </p>
                 <br />
             `);
+                }
             break;
 
             case 'info letters/letter3':
+                if (!isPasswordEntered) {
+                    appendOutput("<br /><p>Access denied</p>");
+                } else {
             appendOutput(`
                 <br />
                 <p>Letter #3</p>
@@ -1216,9 +1346,13 @@ With all my love, Grandma Gertrude
 </p>
                 <br />
             `);
+                }
             break;
 
             case 'info letters/letter4':
+                if (!isPasswordEntered) {
+                    appendOutput("<br /><p>Access denied</p>");
+                } else {
             appendOutput(`
                 <br />
                 <p>Letter #4</p>
@@ -1229,6 +1363,7 @@ Love, Sister Bwerwebhert
 </p>
                 <br />
             `);
+                }
             break;
 
             
