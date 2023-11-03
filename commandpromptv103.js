@@ -81,7 +81,13 @@ function handleCommand(command) {
     // List of Basic commands within the command prompt
             
         default:
-            appendOutput(`<br />Command not recognized: ${command}<br />Please be sure you are using the correct targeting, for example: info staff/gumbert`);
+            appendOutput(`
+            <br />
+            <p>Command not recognized: ${command}</p>
+            <br />
+            <p>Please be sure you are using the correct targeting, for example: info staff/gumbert</p>
+            <br />
+            `);
             break;
             
         case 'help':
