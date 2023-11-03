@@ -2,7 +2,7 @@ const commandInput = document.getElementById('command-input');
 const output = document.querySelector('.output');
 const originalBackgroundImage = getComputedStyle(document.body).backgroundImage;
 let isPasswordEntered = false; // Initialize the password check variable
-let isAudioPlaying = false; // Add a flag to track if audio is currently playing
+let audioTimer = null; // Initialize a timer variable
 let isSecretPasswordEntered = false;
 let listenCommandCount = 0;
 let coinResult = null;
@@ -62,15 +62,14 @@ commandInput.addEventListener('keydown', function(event) {
 });
 
 function playAudio() {
-    if (!isAudioPlaying) {
-        isAudioPlaying = true; // Set the flag to true to indicate audio is playing
+    if (!audioTimer) {
         const audio = new Audio('https://www.fesliyanstudios.com/play-mp3/649'); // Replace with your audio file URL
         audio.play(); // Play the audio
 
-        // Listen for the "ended" event to reset the flag when audio finishes playing
-        audio.addEventListener('ended', function() {
-            isAudioPlaying = false;
-        });
+        // Set a timeout to allow the next audio play after a delay (e.g., 500 milliseconds)
+        audioTimer = setTimeout(function () {
+            audioTimer = null; // Reset the timer after the delay
+        }, 500); // Adjust the delay as needed
     }
 }
 
