@@ -318,56 +318,44 @@ function handleCommand(command) {
             `);
             break;
 
-            case 'progs coinflip':
-     if (coinResult === null) {
-        // Flip the coin and store the result.
-        coinResult = Math.random() < 0.5 ? 'heads' : 'tails';
-        appendOutput(`
-            <br />
-            <p>BOOT: AGESPAST.exe</p>
-            <p>BOOT SUCCESSFUL.</p>
-            <br />
-            <p>THE COIN BEFORE YOU BEARS THE WEIGHT OF HISTORY IN ITS CORRODED GROOVES, A SILENT WITNESS TO AGES LONG PAST.</p>
-            <br />
-            <p>WHAT WILL YOU DO?</p>
-            <br />
-            <ul>
-                <li>flip</li>
-                <li>examine</li>
-                <li>leave</li>
-            </ul>
-            <br />
-        `);
-    } else {
-        appendOutput(`
-            <br />
-            <p>The coin has already been flipped. You cannot flip it again.</p>
-            <br />
-        `);
-    }
+           case 'progs coinflip':
+    appendOutput(`
+        <br />
+        <p>BOOT: AGESPAST.exe</p>
+        <p>BOOT SUCCESSFUL.</p>
+        <br />
+        <p>THE COIN BEFORE YOU BEARS THE WEIGHT OF HISTORY IN ITS CORRODED GROOVES, A SILENT WITNESS TO AGES LONG PAST.</p>
+        <br />
+        <p>WHAT WILL YOU DO?</p>
+        <br />
+        <ul>
+            <li>flip</li>
+            <li>examine</li>
+            <li>leave</li>
+        </ul>
+        <br />
+    `);
     break;
 
 case 'flip':
     if (coinResult === null) {
-        appendOutput(`
-            <br />
-            <p>You cannot flip the coin before examining it.</p>
-            <br />
-        `);
-    } else {
-        appendOutput(`
-            <br />
-            <p>WITH A FLICK OF YOUR THUMB, THE RUSTY COIN SPINS THROUGH THE AIR, ITS BATTERED SURFACE REFLECTING FLEETING MOMENTS OF LIGHT - EONS IN AN INSTANCE.</p>
-            <br />
-            <p>IT LANDS.</p>
-            <br />
-            <p>……………………..</p>
-            <br />
-            <p>${coinResult.toUpperCase()}</p>
-            <br />
-        `);
+        // Flip the coin and store the result.
+        coinResult = Math.random() < 0.5 ? 'heads' : 'tails';
     }
+    appendOutput(`
+        <br />
+        <p>WITH A FLICK OF YOUR THUMB, THE RUSTY COIN SPINS THROUGH THE AIR, ITS BATTERED SURFACE REFLECTING FLEETING MOMENTS OF LIGHT - EONS IN AN INSTANCE.</p>
+        <br />
+        <p>IT LANDS.</p>
+        <br />
+        <p>……………………..</p>
+        <br />
+        <p>${coinResult.toUpperCase()}</p>
+        <br />
+    `);
     break;
+
+// Keep the 'examine' and 'leave' cases as they are
 
 case 'examine':
     if (coinResult === null) {
