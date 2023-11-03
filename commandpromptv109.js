@@ -4,6 +4,7 @@ const originalBackgroundImage = getComputedStyle(document.body).backgroundImage;
 let isPasswordEntered = false; // Initialize the password check variable
 let isSecretPasswordEntered = false;
 let listenCommandCount = 0;
+let coinResult = null;
 
 const unlockPassword = "thedayirest";
 const secretPassword = "codebreaker01101100";
@@ -317,7 +318,12 @@ function handleCommand(command) {
             `);
             break;
 
-            case 'progs coinflip.exe':
+            switch (userInput) {
+    case 'progs coinflip.exe':
+        // Check if the coin has been flipped already to prevent flipping it again.
+        if (coinResult === null) {
+            // Flip the coin and store the result.
+            coinResult = Math.random() < 0.5 ? 'heads' : 'tails';
             appendOutput(`
                 <br />
                 <p>BOOT: AGESPAST.exe</p>
@@ -331,12 +337,26 @@ function handleCommand(command) {
                     <li>flip</li>
                     <li>examine</li>
                     <li>leave</li>
-                </ul>  
+                </ul>
                 <br />
             `);
-            break;
+        } else {
+            appendOutput(`
+                <br />
+                <p>The coin has already been flipped. You cannot flip it again.</p>
+                <br />
+            `);
+        }
+        break;
 
-            case 'flip':
+    case 'flip':
+        if (coinResult === null) {
+            appendOutput(`
+                <br />
+                <p>You cannot flip the coin before examining it.</p>
+                <br />
+            `);
+        } else {
             appendOutput(`
                 <br />
                 <p>WITH A FLICK OF YOUR THUMB, THE RUSTY COIN SPINS THROUGH THE AIR, ITS BATTERED SURFACE REFLECTING FLEETING MOMENTS OF LIGHT - EONS IN AN INSTANCE.</p>
@@ -345,26 +365,36 @@ function handleCommand(command) {
                 <br />
                 <p>……………………..</p>
                 <br />
-                <p>HEADS</p>   
+                <p>${coinResult.toUpperCase()}</p>
                 <br />
             `);
-            break;
+        }
+        break;
 
-            case 'examine':
+    case 'examine':
+        if (coinResult === null) {
             appendOutput(`
                 <br />
-                <p>THE OLD COIN IS LITTERED WITH SCRATCHES, INDENTS, AND WORN EDGES - A MONUMENT TO TIME. THE FATE OF MUCH HAS HINGED ON THIS ORDINARY OBJECT.</p>
+                <p>You must flip the coin before examining it.</p>
                 <br />
             `);
-            break;
-
-            case 'leave':
+        } else {
             appendOutput(`
                 <br />
-                <p>YOU WALK AWAY FROM THE COIN.</p>
+                <p>THE OLD COIN IS LITTERED WITH SCRATCHES, INDENTS, AND WORN EDGES - A MONUMENT TO TIME. The coin landed on ${coinResult}.</p>
                 <br />
             `);
-            break;
+        }
+        break;
+
+    case 'leave':
+        appendOutput(`
+            <br />
+            <p>YOU WALK AWAY FROM THE COIN.</p>
+            <br />
+        `);
+        break;
+}
 
             case 'progs admin_dir':
             appendOutput(`
@@ -486,7 +516,7 @@ function handleCommand(command) {
                 }
                 listenCommandCount++;
             } else {
-                appendOutput(`<p>Usage limit reached for "progs listen." You can only use it 3 times.</p><br />`);
+                appendOutput(`<br /><p>Usage limit reached for "progs listen." You can only use it 3 times.</p><br />`);
             }
                  }
             break;
