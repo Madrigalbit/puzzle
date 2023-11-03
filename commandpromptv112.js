@@ -319,7 +319,7 @@ function handleCommand(command) {
             break;
 
             case 'progs coinflip':
-    if (coinResult === null) {
+     if (coinResult === null) {
         // Flip the coin and store the result.
         coinResult = Math.random() < 0.5 ? 'heads' : 'tails';
         appendOutput(`
