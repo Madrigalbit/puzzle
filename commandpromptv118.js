@@ -2,7 +2,7 @@ const commandInput = document.getElementById('command-input');
 const output = document.querySelector('.output');
 const originalBackgroundImage = getComputedStyle(document.body).backgroundImage;
 let isPasswordEntered = false; // Initialize the password check variable
-let isAnyKeyHeld = false; // Flag to track if any key is held down
+let audioTimer = null; // Initialize a timer variable
 let isSecretPasswordEntered = false;
 let listenCommandCount = 0;
 let coinResult = null;
@@ -62,22 +62,22 @@ commandInput.addEventListener('keydown', function(event) {
 });
 
 function playAudio() {
-    const audio = new Audio('https://www.fesliyanstudios.com/play-mp3/649'); // Replace with your audio file URL
-    audio.play(); // Play the audio
+    if (!audioTimer) {
+        const audio = new Audio('https://www.fesliyanstudios.com/play-mp3/649'); // Replace with your audio file URL
+        audio.play(); // Play the audio
+
+        // Set a timeout to allow the next audio play after a delay (e.g., 500 milliseconds)
+        audioTimer = setTimeout(function () {
+            audioTimer = null; // Reset the timer after the delay
+        }, 500); // Adjust the delay as needed
+    }
 }
 
 const playButton = document.getElementById('play-button'); // Assuming you have an HTML button with id="play-button"
 playButton.addEventListener('click', playAudio); // Attach a click event listener to the play button
 
 document.addEventListener('keydown', function(event) {
-    if (!isAnyKeyHeld) {
-        playAudio(); // Play audio on every keypress
-    }
-    isAnyKeyHeld = true; // Set the flag to true to indicate a key is held down
-});
-
-document.addEventListener('keyup', function(event) {
-    isAnyKeyHeld = false; // Reset the flag when any key is released
+    playAudio(); // Call the playAudio function on keydown
 });
 
 function handleCommand(command) {
