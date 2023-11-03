@@ -824,6 +824,9 @@ Dislikes: Conventional Cleaning, Nosy Prisoners, Revealing the Truth
             break;
 
             case 'info wanted_posters':
+                 if (!isPasswordEntered) {
+                    appendOutput("<br /><p>Access denied</p>");
+                } else {
             appendOutput(`
                 <br />
                 <p>Show Active Wanted Posters.</p>
@@ -839,6 +842,7 @@ Dislikes: Conventional Cleaning, Nosy Prisoners, Revealing the Truth
                 </ul>
                 <br />
             `);
+                 }
             break;
 
             case 'info wanted_posters/zog':
