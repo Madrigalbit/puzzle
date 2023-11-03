@@ -104,7 +104,6 @@ function handleCommand(command) {
                     <li>progs: Displays a list of available programs and their descriptions.</li>
                     <li>info: Displays a list of available stored information.</li>
                     <li>background: Choose a different background.</li>
-                    <li>logout: Logs you out of the terminal and returns you to the main menu.</li>
                 </ul>
                 <br />
                 <p>To get started, simply type your desired command and follow the prompts. Keep your limbs and tentacles inside the terminal at all times, and don't access any programs that you don't have clearance to.</p>
