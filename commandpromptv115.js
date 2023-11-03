@@ -2,6 +2,7 @@ const commandInput = document.getElementById('command-input');
 const output = document.querySelector('.output');
 const originalBackgroundImage = getComputedStyle(document.body).backgroundImage;
 let isPasswordEntered = false; // Initialize the password check variable
+let isAudioPlaying = false; // Add a flag to track if audio is currently playing
 let isSecretPasswordEntered = false;
 let listenCommandCount = 0;
 let coinResult = null;
@@ -61,12 +62,27 @@ commandInput.addEventListener('keydown', function(event) {
 });
 
 function playAudio() {
-    const audio = new Audio('https://www.fesliyanstudios.com/play-mp3/649'); // Replace with your audio file URL
-    audio.play(); // Play the audio
+    if (!isAudioPlaying) {
+        isAudioPlaying = true; // Set the flag to true to indicate audio is playing
+        const audio = new Audio('https://www.fesliyanstudios.com/play-mp3/649'); // Replace with your audio file URL
+        audio.play(); // Play the audio
+
+        // Listen for the "ended" event to reset the flag when audio finishes playing
+        audio.addEventListener('ended', function() {
+            isAudioPlaying = false;
+        });
+    }
 }
-const playButton = document.getElementById('play-button'); // Add an HTML button with id="play-button"
+
+const playButton = document.getElementById('play-button'); // Assuming you have an HTML button with id="play-button"
 playButton.addEventListener('click', playAudio); // Attach a click event listener to the play button
 
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        event.preventDefault(); // Prevent the default Enter key behavior
+        playAudio(); // Call the playAudio function when Enter is pressed
+    }
+});
 
 function handleCommand(command) {
     // Check if the entered command requires a password
