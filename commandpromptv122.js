@@ -63,10 +63,8 @@ commandInput.addEventListener('keydown', function(event) {
 });
 
 function playAudio() {
-    if (!isKeyHeld) {
-        const audio = new Audio('https://www.fesliyanstudios.com/play-mp3/649'); // Replace with your audio file URL
-        audio.play(); // Play the audio
-    }
+    const audio = new Audio('https://www.fesliyanstudios.com/play-mp3/649'); // Replace with your audio file URL
+    audio.play(); // Play the audio
 }
 
 const playButton = document.getElementById('play-button'); // Assuming you have an HTML button with id="play-button"
@@ -77,11 +75,7 @@ document.addEventListener('keydown', function(event) {
         isKeyHeld = true;
     }
     if (!isKeyHeld) {
-        if (audioTimer) {
-            clearTimeout(audioTimer); // Clear the previous timer
-        }
         playAudio(); // Call the playAudio function on keydown
-        isKeyHeld = true; // Set the flag to indicate a key is held down
     }
 });
 
@@ -90,6 +84,7 @@ document.addEventListener('keyup', function(event) {
         isKeyHeld = false;
     }
 });
+
 function handleCommand(command) {
     // Check if the entered command requires a password
     const requiredPassword = commandConfig[command.toLowerCase()];
