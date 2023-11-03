@@ -319,7 +319,7 @@ function handleCommand(command) {
             break;
 
             switch (userInput) {
-    case 'progs coinflip.exe':
+    case 'progs coinflip':
         // Check if the coin has been flipped already to prevent flipping it again.
         if (coinResult === null) {
             // Flip the coin and store the result.
