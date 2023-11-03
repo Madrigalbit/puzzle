@@ -76,13 +76,24 @@ document.addEventListener('keydown', function(event) {
     if (event.key === 'Enter' || event.key === ' ') {
         isKeyHeld = true;
     }
-    playAudio(); // Call the playAudio function on keydown
+    if (!isKeyHeld) {
+        if (audioTimer) {
+            clearTimeout(audioTimer); // Clear the previous timer
+        }
+        playAudio(); // Call the playAudio function on keydown
+    }
 });
 
 document.addEventListener('keyup', function(event) {
     if (event.key === 'Enter' || event.key === ' ') {
         isKeyHeld = false;
     }
+    if (audioTimer) {
+        clearTimeout(audioTimer); // Clear the timer when a key is released
+    }
+    audioTimer = setTimeout(function () {
+        audioTimer = null; // Reset the timer
+    }, 500); // Adjust the delay as needed
 });
 
 function handleCommand(command) {
