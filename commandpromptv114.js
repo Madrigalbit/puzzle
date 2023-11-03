@@ -340,7 +340,10 @@ function handleCommand(command) {
 case 'flip':
     if (coinResult === null) {
         // Flip the coin and store the result.
-        coinResult = Math.random() < 0.5 ? 'heads' : 'tails';
+        coinResult = Math.random() < 0.5 ? 'HEADS' : 'TAILS';
+    } else {
+        // If coin has already been flipped, reset it and flip again.
+        coinResult = Math.random() < 0.5 ? 'HEADS' : 'TAILS';
     }
     appendOutput(`
         <br />
@@ -361,13 +364,13 @@ case 'examine':
     if (coinResult === null) {
         appendOutput(`
             <br />
-            <p>You must flip the coin before examining it.</p>
+            <p>THE OLD COIN IS LITTERED WITH SCRATCHES, INDENTS, AND WORN EDGES - A MONUMENT TO TIME.</p>
             <br />
         `);
     } else {
         appendOutput(`
             <br />
-            <p>THE OLD COIN IS LITTERED WITH SCRATCHES, INDENTS, AND WORN EDGES - A MONUMENT TO TIME. The coin landed on ${coinResult}.</p>
+            <p>THE OLD COIN RESTS ON THE FLOOR, IT LANDED ${coinResult}.</p>
             <br />
         `);
     }
