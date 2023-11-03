@@ -72,16 +72,16 @@ function handleCommand(command) {
     const requiredPassword = commandConfig[command.toLowerCase()];
 
     if (requiredPassword === unlockPassword && !isPasswordEntered) {
-        appendOutput("<p>Access denied. Please enter the correct password to view segment.</p>");
+        appendOutput("<br /><p>Access denied. Please enter the correct password to view segment.</p><br />");
     } else if (requiredPassword === secretPassword && !isSecretPasswordEntered) {
-        appendOutput("<p>Access denied. Please enter the correct password to view segment.</p>");
+        appendOutput("<br /><p>Access denied. Please enter the correct password to view segment.</p><br />");
     } else {
         switch (command.toLowerCase()) {
             
     // List of Basic commands within the command prompt
             
         default:
-            appendOutput(`<br />Command not recognized: ${command}`);
+            appendOutput(`<br />Command not recognized: ${command}<br />Please be sure you are using the correct targeting, for example: info staff/gumbert`);
             break;
             
         case 'help':
@@ -92,10 +92,13 @@ function handleCommand(command) {
                 <ul>
                     <li>progs: Displays a list of available programs and their descriptions.</li>
                     <li>info: Displays a list of available stored information.</li>
+                    <li>background: Choose a different background.</li>
                     <li>logout: Logs you out of the terminal and returns you to the main menu.</li>
                 </ul>
                 <br />
                 <p>To get started, simply type your desired command and follow the prompts. Keep your limbs and tentacles inside the terminal at all times, and don't access any programs that you don't have clearance to.</p>
+                <br />
+                <p>Be sure to use correct formating when targeting different commands.</p>
                 <br />
             `);
             break;
@@ -240,7 +243,7 @@ function handleCommand(command) {
                     <li>admin_dir: Access different directorys(PASSWORD-PROTECTED)</li>
                 </ul>
                 <br />
-                <p>To target specific Information, please follow this format - Example: 'progs target'</p>   
+                <p>To target a specific program, please follow this format - Example: 'progs target'</p>   
                 <br />
             `);
             break;
@@ -371,7 +374,7 @@ function handleCommand(command) {
             
             case 'progs admin_dir/segment_two':
                 if (!isPasswordEntered) {
-                    appendOutput("<p>Access denied. Please enter the correct password to view segment.</p>");
+                    appendOutput("<br /><p>Access denied. Please enter the correct password to view segment.</p>");
                 } else {
                     appendOutput(`
                     <br />
@@ -384,11 +387,11 @@ function handleCommand(command) {
                     <p>Accessible new commands:</p>
                     <br />
                     <ul>
-                    <li>wanted_posters</li>
-                    <li>incident_reports</li>
-                    <li>maintenance_req</li>
-                    <li>fortune</li>
-                    <li>letters</li>
+                    <li>info wanted_posters</li>
+                    <li>info incident_reports</li>
+                    <li>info maintenance_req</li>
+                    <li>progs fortune</li>
+                    <li>info letters</li>
                     </ul>
                     <br />
                     `);
@@ -397,7 +400,7 @@ function handleCommand(command) {
 
             case 'progs admin_dir/segment_three':
                 if (!isSecretPasswordEntered) {
-                    appendOutput("<p>Access denied. Please enter the correct password to view segment.</p>");
+                    appendOutput("<br /><p>Access denied. Please enter the correct password to view segment.</p>");
                 } else {
                     appendOutput(`
                     <br />
@@ -410,9 +413,9 @@ function handleCommand(command) {
                     <p>Accessible new commands:</p>
                     <br />
                     <ul>
-                    <li>security</li>
-                    <li>lore</li>
-                    <li>listen</li>
+                    <li>progs security</li>
+                    <li>info lore</li>
+                    <li>progs listen</li>
                     </ul>
                     <br />
                     `);
