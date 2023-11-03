@@ -306,7 +306,7 @@ function handleCommand(command) {
             `);
             break;
 
-                      case 'progs access/vip':
+                case 'progs access/vip':
             appendOutput(`
                 <br />
                 <p>The terminal interface transforms into a live visual feed from the security camera stationed within a highly secure and isolated cell within the facility. Its walls are reinforced with layers of unbreakable materials, and the dim lighting within casts elongated shadows across the minimalist interior. A forcefield protrudes in front of the cell, housing what appears to be a bipedal canine. The stillness carries an air of contemplation and resignation. </p>
@@ -396,6 +396,7 @@ function handleCommand(command) {
                     <br />
                     <ul>
                     <li>info wanted_posters</li>
+                    <li>info entries</li>
                     <li>info incident_reports</li>
                     <li>info maintenance_req</li>
                     <li>progs fortune</li>
@@ -494,7 +495,6 @@ function handleCommand(command) {
                 <ul>
                     <li>staff: View staff information.</li>
                     <li>schedule: View schedule information.</li>
-                    <li>entries: View user based entry logs.</li>
                     <li>monthly_entries: View monthly logs.</li>
                 </ul>
                 <br />
@@ -687,8 +687,6 @@ Dislikes: Conventional Cleaning, Nosy Prisoners, Revealing the Truth
             case 'info schedule/q1':
             appendOutput(`
                 <br />
-                <p>---------------------------------------------</p>
-                <br />
                 <ul>
                     <li>Week 1: Prisoner Orientation (Lecture on the Various Ways of Cosmic Torture)</li>
                     <li>Week 2: Group Sing-Along to "Galactic Groans" – The Prison Anthem</li>
@@ -703,15 +701,11 @@ Dislikes: Conventional Cleaning, Nosy Prisoners, Revealing the Truth
                     <li>Week 11+12: N/A</li>
                 </ul>
                 <br />
-                <p>---------------------------------------------</p>
-                <br />
             `);
             break;
 
             case 'info schedule/q2':
             appendOutput(`
-                <br />
-                <p>---------------------------------------------</p>
                 <br />
                 <ul>
                     <li>Week 1: "Gravity Shuffle" Dance Competition (Performed in Zero-G)</li>
@@ -727,15 +721,11 @@ Dislikes: Conventional Cleaning, Nosy Prisoners, Revealing the Truth
                     <li>Week 11+12: Announce Bloodsport Tournament for Q3, Give Prisoners Time to Prepare</li>
                 </ul>
                 <br />
-                <p>---------------------------------------------</p>
-                <br />
             `);
             break;
 
             case 'info schedule/q3':
             appendOutput(`
-                <br />
-                <p>---------------------------------------------</p>
                 <br />
                 <ul>
                     <li>Week 1: "Nebula Nonsense" Stand-Up Comedy Night (Bad Jokes Result in Solitary. Jokes About Facility Having Inhumane Living Conditions Result in Execution)</li>
@@ -751,8 +741,6 @@ Dislikes: Conventional Cleaning, Nosy Prisoners, Revealing the Truth
                     <li>Week 11: Cancel Bloodsport Tournament, Intensify Security Due to VIP Arriving</li>
                     <li>Week 12: Reroute Security to Ensure VIP Remains Locked Up</li>
                 </ul>
-                <br />
-                <p>---------------------------------------------</p>
                 <br />
             `);
             break;
